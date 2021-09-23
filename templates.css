@@ -2,11 +2,6 @@
 
 .opt {
     padding: 10px;
-    min-width: 600px;
-}
-
-.opt__liquid {
-    display: none;
 }
 
 .opt__header,
