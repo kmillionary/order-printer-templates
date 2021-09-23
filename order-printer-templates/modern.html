@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        /* _Modern_template */
+
+        .opt {
+            padding: 10px;
+        }
+
+        .opt-modern__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+            background-color: #f2f2f2;
+            margin-bottom: 2em;
+            padding: 10px 0;
+        }
+
+        .opt-modern__header, 
+        .opt-modern__body,
+        .opt-modern__footer {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+        
+        .opt-modern__logo {
+            width: 40%;
+        }
+
+        .opt-modern__logo img {
+            width: 100%;
+            max-width: 300px;
+            max-height: 150px;
+        }
+
+        .opt-modern__shop-data {
+            width: 60%;
+            text-align: right;
+        }
+
+        .opt-modern__body {
+            display: flex;
+        }
+
+        .opt-modern__order-items {
+            width: 70%
+        }
+
+        .opt-modern__order-data {
+            width: 30%;
+            text-align: right;
+            margin-left: 2em;
+            padding-left: 1em;
+            border-left: thin dashed rgba(0, 0, 0, 0.2);
+        }
+
+        .opt-modern__order-summary {
+            width: 50%;
+            text-align: right;
+            margin-top: 2em;
+            margin-left: auto;
+        }
+
+        .opt-modern__order-summary .divTableCell {
+            border-bottom: none;
+        }
+
+        .opt-modern__order-summary .total {
+            display: flex;
+            justify-content: space-around;
+            text-align: right;
+            border-top: double rgba(0, 0, 0, 0.2);
+        }
+
+        .opt-modern__order-total h3,
+        .opt-modern__order-total p {
+            margin: 0;
+        }
+
+        .opt-modern__order-total h3 {
+            font-size: 2em;
+        }
+
+        .opt-modern__body .divTable .opt__line-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .opt-modern__body .divTable .opt__line-item .opt__line-item--img img {
+            width: 40px;
+            margin-right: 1em;
+        }
+
+        /* Div table */
+
+        .divTable {
+            display: table;
+            width: 100%;
+        }
+
+        .divTableRow {
+            display: table-row;
+        }
+
+        .divTableHeading {
+            /* background-color: #EEE; */
+            display: table-header-group;
+            text-align: center;
+        }
+
+        .divTableCell,
+        .divTableHead {
+            display: table-cell;
+            padding: 5px 10px;
+            border-bottom: thin solid rgba(0, 0, 0, 0.2);
+            vertical-align: middle;
+        }
+
+        .divTableHead:not(:first-of-type) {
+            text-align: center;
+        }
+
+        .divTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+            font-weight: bold;
+        }
+
+        .divTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+
+        .divTableBody {
+            display: table-row-group;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="opt">
+        <div class="opt-modern__header">
+            <div class="opt-modern__logo">
+                <img class="logo-url"
+                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+            </div>
+            <div class="opt-modern__shop-data">
+                <p>
+                    <b>Nombre Tienda</b>
+                    <br> Calle Lorem avenida ipsum
+                    <br> Guatemala, Guatemala
+                    <br> +(502) 5555-5555
+                    <br> www.mitienda.com
+                </p>
+            </div>
+        </div>
+        <div class="opt-modern__body">
+            <div class="opt-modern__order-items">
+                <!-- div table -->
+                <div class="divTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableHead"><b>Producto</b></div>
+                            <div class="divTableHead"><b>Precio</b></div>
+                            <div class="divTableHead"><b>Cant</b></div>
+                            <div class="divTableHead"><b>Total</b></div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">
+                                <div class="opt__line-item">
+                                    <div class="opt__line-item--img">
+                                        <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288"
+                                            alt="producto" width="50">
+                                    </div>
+                                    <div style="text-align: left">
+                                        <span>Título del Producto</span> <br>
+                                        <span>SKU</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divTableCell">
+                                <s>Q125.00</s>
+                                <br> Q100.00
+                            </div>
+                            <div class="divTableCell">3 x</div>
+                            <div class="divTableCell">
+                                Q300.00
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- end div table -->
+                <div class="opt-modern__order-summary">
+                    <div class="divTable">
+                        <div class="divTableBody">
+                            <div class="divTableRow">
+                                <div class="divTableCell">Descuentos</div>
+                                <div class="divTableCell"> -Q25.00 </div>
+                            </div>
+                            <div class="divTableRow">
+                                <div class="divTableCell">Subtotal</div>
+                                <div class="divTableCell">Q275.00</div>
+                            </div>
+                            <div class="divTableRow">
+                                <div class="divTableCell">Envío</div>
+                                <div class="divTableCell">Q25.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <p><b>Total a pagar:</b></p>
+                        <p>Q.300.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="opt-modern__order-data">
+                <div class="opt-modern__order-total">
+                    <p><b>Total a pagar</b></p>
+                    <h3>Q300.00</h3>
+                </div>
+                <div class="opt-modern__cust-data">
+                    <p><b>Facturar a</b>
+                        <br> Nombre del Cliente
+                        <br> Empresa Acme
+                        <br> Dirección del Cliente
+                        <br> +(502) 5555-5555
+                    </p>
+                </div>
+                <div class="opt-modern__order-number">
+                    <p><b>Factura no.</b>
+                        <br> 01001
+                    </p>
+                </div>
+                <div class="opt-modern__order-date">
+                    <p><b>Fecha</b>
+                        <br> 02/09/2021
+                    </p>
+                </div>
+                <div class="opt-modern__payment-status">
+                    <p><b>Estado de Pago</b>
+                        <br> Pendiente
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="opt-modern__footer">
+            <p><b>Notas:</b></p>
+            <p>Entregar orden este martes.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

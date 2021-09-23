@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact</title>
+</head>
+<body>
+    <style>
+        /* _Order_printer_template */
+    
+        .opt {
+            padding: 10px;
+        }
+    
+        .opt__liquid {
+            display: none;
+        }
+    
+        .opt__header,
+        .opt__footer {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+    
+        .opt__order-data {
+            width: 60%;
+        }
+    
+        .opt__order-data h3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+    
+        .opt__header .opt__logo {
+            width: 40%;
+            margin-left: 3em;
+            text-align: right;
+        }
+    
+        .opt__header .opt__logo img {
+            max-width: 100%;
+            max-height: 150px;
+        }
+    
+        .divTable .opt__line-item {
+            display: flex;
+            align-items: center;
+        }
+    
+        .divTable .opt__line-item .opt__line-item--img img {
+            width: 40px;
+            margin-right: 1em;
+        }
+    
+        .opt__footer {
+            margin-top: 1em;
+        }
+    
+        .opt__shop-data {
+            width: 60%;
+        }
+    
+        .opt__order-resume {
+            width: 40%;
+        }
+    
+        /* Div table */
+    
+        .divTable {
+            display: table;
+            width: 100%;
+        }
+    
+        .divTableRow {
+            display: table-row;
+        }
+    
+        .divTableHeading {
+            /* background-color: #EEE; */
+            display: table-header-group;
+            text-align: center;
+        }
+    
+        .divTableCell,
+        .divTableHead {
+            display: table-cell;
+            padding: 5px 10px;
+            border-bottom: thin solid black;
+        }
+    
+        .opt__line-items .divTableCell {
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .divTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+            font-weight: bold;
+        }
+    
+        .divTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+    
+        .divTableBody {
+            display: table-row-group;
+        }
+    </style>
+    <div class="opt">
+        <div class="opt__header">
+            <div class="opt__order-data">
+                <h3>Orden {{ order_number }}</h3>
+                <p>
+                    <b>Nombre:</b> {{ shipping_address.name }}
+                    <br><b>Dirección:</b>
+                    {% if shipping_address.company %}
+                    <br>{{ shipping_address.company }}
+                    {% endif %}
+                    {% if shipping_address.address1 %}
+                    <br>{{ shipping_address.address1 }}
+                    {% endif %}
+                    {% if shipping_address.address2 %}
+                    <br>{{ shipping_address.address2 }}
+                    {% endif %}
+                    {% if shipping_address.city %}
+                    <br> {{ shipping_address.city }},
+                    {% endif %}
+                    {% if shipping_address.province %}
+                    {{ shipping_address.province }},
+                    {% endif %}
+                    {% if shipping_address.country %}
+                    {{ shipping_address.country }}
+                    {% endif %}
+    
+                    <br><b>Teléfono:</b> {{ shipping_address.phone }}
+                </p>
+            </div>
+            <div class="opt__logo">
+                <img class="logo-placeholer" src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+            </div>
+        </div>
+    
+        <div class="divTable opt__line-items">
+            <div class="divTableHeading">
+                <div class="divTableRow">
+                    <div class="divTableCell">Producto</div>
+                    <div class="divTableCell">Cantidad</div>
+                    <div class="divTableCell">Precio</div>
+                    <div class="divTableCell">Subtotal</div>
+                </div>
+            </div>
+            <div class="divTableBody">
+                {% for line_item in line_items %}
+                <div class="divTableRow">
+                    <div class="divTableCell opt__line-item">
+                        <div class="opt__line-item--img">
+                            {{ line_item.image | img_url: 'thumb' | img_tag }}
+                        </div>
+                        <div style="text-align: left">
+                            <span>{{ line_item.title }}</span> <br>
+                            <span>{{ line_item.sku }}</span>
+                        </div>
+                    </div>
+                    <div class="divTableCell">{{ line_item.quantity }} x</div>
+                    <div class="divTableCell">
+                        {% if variant.compare_at_price != variant.price %}
+                        <s>{{ variant.compare_at_price | money }}</s>
+                        {% endif %}
+                        {{ line_item.price | money }}
+                    </div>
+                    <div class="divTableCell">
+                        {% assign subtotal = line_item.price | times: line_item.quantity | money %}
+                        {{ subtotal }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+        <div class="opt__footer">
+            <div class="opt__shop-data">
+                <p><b>{{ shop_name }}</b>
+                    <br> {{ shop.address }}
+                    <br> {{ shop.city }} {{ shop.province }}
+                    <br> {{ shop.phone }}
+                    <br> {{ shop.email }}
+                    <br> {{ shop.domain }}
+                </p>
+    
+            </div>
+            <div class="opt__order-resume">
+                <div class="divTable">
+                    <div class="divTableBody">
+                        <div class="divTableRow">
+                            <div class="divTableCell">Descuentos</div>
+                            <div class="divTableCell"> -{{ total_discounts | money }} </div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">Subtotal</div>
+                            <div class="divTableCell">{{ subtotal_price | money }}</div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">Envío</div>
+                            <div class="divTableCell">{{ shipping_price | money }}</div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">Total</div>
+                            <div class="divTableCell">{{ total_price | money }}</div>
+                        </div>
+                        <div class="divTableRow">
+                            <div class="divTableCell">Pago</div>
+                            <div class="divTableCell">
+                                {% if total_price == total_paid %}
+                                <small><b>PAGADO</b> </small>
+                                {% else %}
+                                <small><b>PENDIENTE</b> </small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
