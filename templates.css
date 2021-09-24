@@ -137,6 +137,7 @@
 .opt-modern__body .divTable .opt__line-item {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .opt-modern__body .divTable .opt__line-item .opt__line-item--img img {
