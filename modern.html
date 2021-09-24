@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="opt">
         <div class="opt-modern__header">
             <div class="opt-modern__logo">
@@ -21,11 +20,12 @@
             </div>
             <div class="opt-modern__shop-data">
                 <p>
-                    <b>Nombre Tienda</b>
-                    <br> Calle Lorem avenida ipsum
-                    <br> Guatemala, Guatemala
-                    <br> +(502) 5555-5555
-                    <br> www.mitienda.com
+                    <b>{{ shop_name }}</b>
+                    <br> {{ shop.address }}
+                    <br> {{ shop.city }}, {{ shop.province }}
+                    <br> {{ shop.phone }}
+                    <br> {{ shop.email }}
+                    <br> {{ shop.domain }}
                 </p>
             </div>
         </div>
@@ -40,28 +40,32 @@
                             <div class="divTableHead"><b>Cant</b></div>
                             <div class="divTableHead"><b>Total</b></div>
                         </div>
+                        {% for line_item in line_items %}
                         <div class="divTableRow">
                             <div class="divTableCell">
                                 <div class="opt__line-item">
                                     <div class="opt__line-item--img">
-                                        <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288"
-                                            alt="producto" width="50">
+                                        {{ line_item.image | img_url: 'thumb' | img_tag }}
                                     </div>
                                     <div style="text-align: left">
-                                        <span>Título del Producto</span> <br>
-                                        <span>SKU</span>
+                                        <span>{{ line_item.title }}</span> <br>
+                                        <span>{{ line_item.sku }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="divTableCell">
-                                <s>Q125.00</s>
-                                <br> Q100.00
+                                {% if variant.compare_at_price != variant.price %}
+                                <s>{{ variant.compare_at_price | money }}</s>
+                                {% endif %}
+                                {{ line_item.price | money }}
                             </div>
-                            <div class="divTableCell">3 x</div>
+                            <div class="divTableCell">{{ line_item.quantity }} x</div>
                             <div class="divTableCell">
-                                Q300.00
+                                {% assign subtotal = line_item.price | times: line_item.quantity | money %}
+                                {{ subtotal }}
                             </div>
                         </div>
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -71,57 +75,80 @@
                         <div class="divTableBody">
                             <div class="divTableRow">
                                 <div class="divTableCell">Descuentos</div>
-                                <div class="divTableCell"> -Q25.00 </div>
+                                <div class="divTableCell">  -{{ total_discounts | money }} </div>
                             </div>
                             <div class="divTableRow">
                                 <div class="divTableCell">Subtotal</div>
-                                <div class="divTableCell">Q275.00</div>
+                                <div class="divTableCell">{{ subtotal_price | money }}</div>
                             </div>
                             <div class="divTableRow">
                                 <div class="divTableCell">Envío</div>
-                                <div class="divTableCell">Q25.00</div>
+                                <div class="divTableCell">{{ shipping_price | money }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="total">
                         <p><b>Total a pagar:</b></p>
-                        <p>Q.300.00</p>
+                        <p>{{ total_price | money }}</p>
                     </div>
                 </div>
             </div>
             <div class="opt-modern__order-data">
                 <div class="opt-modern__order-total">
                     <p><b>Total a pagar</b></p>
-                    <h3>Q300.00</h3>
+                    <h3>{{ total_price | money }}</h3>
                 </div>
                 <div class="opt-modern__cust-data">
-                    <p><b>Facturar a</b>
-                        <br> Nombre del Cliente
-                        <br> Empresa Acme
-                        <br> Dirección del Cliente
-                        <br> +(502) 5555-5555
+                    <p>
+                        <b>Facturara a:</b> 
+                        <br>{{ shipping_address.name }}
+                        {% if shipping_address.company %}
+                        <br>{{ shipping_address.company }}
+                        {% endif %}
+                        {% if shipping_address.address1 %}
+                        <br>{{ shipping_address.address1 }}
+                        {% endif %}
+                        {% if shipping_address.address2 %}
+                        <br>{{ shipping_address.address2 }}
+                        {% endif %}
+                        {% if shipping_address.city %}
+                        <br> {{ shipping_address.city }},
+                        {% endif %}
+                        {% if shipping_address.province %}
+                        {{ shipping_address.province }},
+                        {% endif %}
+                        {% if shipping_address.country %}
+                        {{ shipping_address.country }}
+                        {% endif %}
+                        <br> {{ shipping_address.phone }}
                     </p>
                 </div>
                 <div class="opt-modern__order-number">
                     <p><b>Factura no.</b>
-                        <br> 01001
+                        <br> {{ order_number }}
                     </p>
                 </div>
                 <div class="opt-modern__order-date">
                     <p><b>Fecha</b>
-                        <br> 02/09/2021
+                        <br> {{ created_at | date: "%d / %b / %y" }}
                     </p>
                 </div>
                 <div class="opt-modern__payment-status">
-                    <p><b>Estado de Pago</b>
-                        <br> Pendiente
+                    <p><b>Estado de Pago</b> 
+                        {% if total_price == total_paid %}
+                        <br><small><b>PAGADO</b> </small>
+                        {% else %}
+                        <br><small><b>PENDIENTE</b> </small>
+                        {% endif %}
                     </p>
                 </div>
             </div>
         </div>
         <div class="opt-modern__footer">
+            {% if note %}    
             <p><b>Notas:</b></p>
-            <p>Entregar orden este martes.</p>
+            <p>{{ note }}</p>
+            {% endif %}
         </div>
     </div>
 

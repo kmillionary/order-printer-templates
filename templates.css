@@ -114,8 +114,9 @@
     margin-left: auto;
 }
 
-.opt-modern__order-summary .divTableCell {
+.opt-modern__order-summary .divTableCell:not(:first-of-type) {
     border-bottom: none;
+    text-align: center;
 }
 
 .opt-modern__order-summary .total {
