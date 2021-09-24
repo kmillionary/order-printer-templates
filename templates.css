@@ -1,12 +1,4 @@
-:root {
-    --primary-color: #000;
-    --secundary-color: #ddd;
-}
 /* _Compact_template */
-
-.primary-color {
-    color: var(--primary-color)
-}
 
 .opt {
     padding: 10px;
