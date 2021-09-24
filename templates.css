@@ -1,4 +1,12 @@
+:root {
+    --primary-color: #000;
+    --secundary-color: #ddd;
+}
 /* _Compact_template */
+
+.primary-color {
+    color: var(--primary-color)
+}
 
 .opt {
     padding: 10px;
@@ -64,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
-    background-color: #f2f2f2;
+    background-color: var(--secundary-color);
     margin-bottom: 2em;
     padding: 20px 0;
 }
@@ -107,7 +115,7 @@
     text-align: right;
     margin-left: 2em;
     padding-left: 1em;
-    border-left: thin dashed rgba(0, 0, 0, 0.2);
+    border-left: thin dashed var(--secundary-color);
 }
 
 .opt-modern__order-summary {
@@ -125,7 +133,7 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-    border-top: double rgba(0, 0, 0, 0.2);
+    border-top: double var(--secundary-color);
 }
 
 .opt-modern__order-total h3,
@@ -169,7 +177,7 @@
 .divTableHead {
     display: table-cell;
     padding: 5px 10px;
-    border-bottom: thin solid rgba(0, 0, 0, 0.2);
+    border-bottom: thin solid var(--secundary-color);
     vertical-align: middle;
 }
 
