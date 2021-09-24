@@ -121,7 +121,7 @@
 .opt-modern__order-summary .total {
     display: flex;
     justify-content: space-around;
-    text-align: right;
+    text-align: center;
     border-top: double rgba(0, 0, 0, 0.2);
 }
 
