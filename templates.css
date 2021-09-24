@@ -27,8 +27,8 @@
 }
 
 .opt__header .opt__logo img {
-    max-width: 100%;
-    max-height: 150px;
+    max-width: 250px;
+    height: auto;
 }
 
 .divTable .opt__line-item {
@@ -82,7 +82,7 @@
 
 .opt-modern__logo img {
     max-width: 250px;
-    max-height: 150px;
+    height: auto;
 }
 
 .opt-modern__shop-data {
