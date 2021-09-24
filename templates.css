@@ -49,9 +49,13 @@
     width: 60%;
 }
 
-.opt__order-summary{
+.opt__order-summary {
     width: 40%;
     text-align: right;
+}
+
+.opt__order-summary .divTableCell {
+    border-bottom: none;
 }
 
 /* _Modern_template */
@@ -77,7 +81,6 @@
 }
 
 .opt-modern__logo img {
-    width: 100%;
     max-width: 300px;
     max-height: 150px;
 }
