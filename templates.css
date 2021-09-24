@@ -64,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2;
     margin-bottom: 2em;
     padding: 20px 0;
 }
