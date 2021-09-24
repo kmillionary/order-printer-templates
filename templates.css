@@ -64,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
-    background-color: var(--secundary-color);
+    background-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 2em;
     padding: 20px 0;
 }
@@ -107,7 +107,7 @@
     text-align: right;
     margin-left: 2em;
     padding-left: 1em;
-    border-left: thin dashed var(--secundary-color);
+    border-left: thin dashed rgba(0, 0, 0, 0.2);
 }
 
 .opt-modern__order-summary {
@@ -125,7 +125,7 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-    border-top: double var(--secundary-color);
+    border-top: double rgba(0, 0, 0, 0.2);
 }
 
 .opt-modern__order-total h3,
@@ -169,7 +169,7 @@
 .divTableHead {
     display: table-cell;
     padding: 5px 10px;
-    border-bottom: thin solid var(--secundary-color);
+    border-bottom: thin solid rgba(0, 0, 0, 0.2);
     vertical-align: middle;
 }
 
