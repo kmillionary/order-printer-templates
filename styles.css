@@ -1,0 +1,156 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* _Order_printer_section */
+
+.ops {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+.ops__form {
+    background-color: #f2f2f2;
+    padding: 1em;
+    margin: 2em auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+
+}
+
+.ops__form form {
+    position: sticky;
+    top: 10;
+}
+
+.ops__form label {
+    padding-bottom: 0.5em;
+    display: block;
+}
+
+.ops__form-item {
+    margin-bottom: 1em;
+}
+
+.ops__form-item .logo-width {
+    display: flex;
+}
+
+.ops__form input {
+    border-radius: 5px;
+    border: thin solid silver;
+    width: 100%;
+    padding: 1em;
+}   
+
+.ops__form textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 1em;
+    font-family: inherit;
+    border-radius: 5px;
+    border: thin solid silver;
+}
+
+.ops__form-item .logo-width #logoWidth {
+    width: 20%;
+    min-width: 70px;
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.ops__form-item .logo-width #rangeWidth {
+    width: 80%;
+}
+
+.ops__form input[type=color] {
+    height: 40px;
+    padding: 5px 10px;
+}
+
+.ops__template-container {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2em;
+    max-width: 800px;
+}
+
+.ops__template-container h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.ops__template-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: thin solid rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.ops__form-btn,
+.ops__template-btn {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.ops__form-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 800px) {
+    .ops {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        position: relative;
+    }
+
+    .ops__templates {
+        margin-left: 2em;
+        width: 60%;
+    }
+    
+    .ops__form {
+        width: 40%;
+        position: sticky;
+        top:80px;
+        display:inline-block;
+    }
+}
+
+@media only screen and (min-width: 1260px) {
+    .ops__templates {
+        width: 70%;
+    }
+
+    .ops__form {
+        width: 30%;
+    }
+}
+
+.opt {
+    padding: 10px;
+    min-width: 600px;
+}
+
+.opt__liquid {
+    display: none;
+}
