@@ -82,6 +82,7 @@ body {
 }
 
 button#btnUrl {
+ background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%); 
   width: 100%;
   padding: 20px 45px;
   text-align: center;
