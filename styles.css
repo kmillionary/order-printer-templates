@@ -39,7 +39,6 @@ hr {
 
 button {
     cursor: pointer;
-    font-weight: bold;
 }
 
 .kmillion__logo-wrapper {
@@ -165,6 +164,7 @@ button#btnUrl:hover {
 
 .kmillion__contact-us {
     text-decoration: none;
+    font-weight: bold;
 }
 
 .ops__copy-btn {
