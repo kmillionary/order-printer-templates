@@ -37,6 +37,10 @@ hr {
     border: thin solid rgb(219, 219, 219);
 }
 
+button {
+    cursor: pointer;
+}
+
 .kmillion__logo-wrapper {
     width: 150px;
 }
