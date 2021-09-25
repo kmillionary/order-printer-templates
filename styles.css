@@ -81,6 +81,58 @@ body {
     padding: 5px 10px;
 }
 
+button#btnUrl {
+  width: 100%;
+  padding: 20px 45px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  font-size: 18px;
+  margin: 20px 0 0 0;
+}
+
+button#btnUrl:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.ops__copy-btn {
+  font-size: 16px;
+  background-color: cornflowerblue;
+  color: white;
+  transition: 0.3s;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: thin solid transparent;
+}
+
+.ops__copy-btn:hover {
+  border: thin solid cornflowerblue;
+  background-color: transparent;
+  color: cornflowerblue;
+}
+
+.ops__form-btn button[type=reset] {
+  display: inline;
+  background: none;
+  border: none;
+  color: cornflowerblue;
+  transition: 0.3s;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.ops__form-btn button[type=reset]:hover {
+  opacity: 0.6;
+}
+
 .ops__template-container {
     background-color: #f2f2f2;
     border-radius: 5px;
