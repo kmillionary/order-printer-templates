@@ -6,13 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla Order Printer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="templates.css">
 </head>
 
 <body>
+    <header>
+        <div class="kmillion__header">
+            <a class="kmillion__logo-wrapper" href="http://k-million.com" target="_blank" rel="noopener noreferrer">
+                <img class="kmillion__logo" src="https://cdn.shopify.com/s/files/1/0444/5532/9945/files/golden_ratio_logo_y_letras_BLANCAS.png?v=1632534622"
+                    alt="logo de kmillion">
+            </a>
+            <a class="kmillion__contact-us" href="https://k-million.com/pages/contactanos">Contáctanos</a>
+        </div>
+    </header>
     <section class="ops">
         <form onsubmit="return false" class="ops__form">
+            <h3>Personaliza tu plantilla</h3>
+            <p>Utiliza la aplicación <a href="https://apps.shopify.com/order-printer" target="_blank" rel="noopener noreferrer">Order Printer</a> para imprimir estas plantillas desde tu tienda Shopify</p>
+            <hr>
             <div class="ops__form-item">
                 <label for="url">Ingresa la URL de tu logo</label>
                 <input type="url" name="url" id="logoUrl" placeholder="https://cdn.shopify.com/...">
@@ -33,8 +50,13 @@
                 <textarea name="message" id="message" rows="3" placeholder="¡Gracias por su compra!"></textarea>
             </div>
             <div class="ops__form-btn">
-                <button type="reset">Limpiar</button>
-                <button id="btnUrl">Personalizar plantilas</button>
+                <button type="reset"><span class="material-icons-outlined">
+                    restart_alt
+                    </span></button>
+                <button id="btnUrl">
+                    <span class="material-icons-outlined">format_paint</span>
+                    <span>Personalizar</span>
+                </button>
             </div>
         </form>
         <div class="ops__templates">
@@ -49,7 +71,7 @@
                                 <h3>Orden no. 1001</h3>
                                 <p>
                                     <b>Nombre:</b> Nombre del Cliente
-                                    <br><b>Dirección:</b> 
+                                    <br><b>Dirección:</b>
                                     <br>Empresa Acme
                                     <br>Calle Lorem Avenida Ipsum
                                     <br> Guatemala, Guatemala
@@ -57,7 +79,9 @@
                                 </p>
                             </div>
                             <div class="opt__logo">
-                                <img class="logo-placeholder" src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                                <img class="logo-placeholder"
+                                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                                    alt="logo">
                             </div>
                         </div>
 
@@ -74,7 +98,8 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell opt__line-item">
                                         <div class="opt__line-item--img">
-                                            <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288" alt="" width="40">
+                                            <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288"
+                                                alt="" width="40">
                                         </div>
                                         <div style="text-align: left">
                                             <span>Titulo de variante</span> <br>
@@ -88,7 +113,8 @@
                                 <div class="divTableRow">
                                     <div class="divTableCell opt__line-item">
                                         <div class="opt__line-item--img">
-                                            <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288" alt="" width="40">
+                                            <img src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder-images-product-1_large_ebbfc251-3a4b-42d6-b1ba-3a87865eb39e.png?v=1632381288"
+                                                alt="" width="40">
                                         </div>
                                         <div style="text-align: left">
                                             <span>Titulo de variante</span> <br>
@@ -145,133 +171,138 @@
                     <!-- liquid template -->
                     <div class="opt__liquid">
 
-<link rel="stylesheet" href="https://kmillionary.github.io/order-printer-template/templates.css"> 
-<div class="opt">
-    <style></style>
-    <div class="opt__header">
-        <div class="opt__order-data">
-            <h3>Orden {{ order_number }}</h3>
-            <p>
-                <b>Nombre:</b> {{ shipping_address.name }}
-                <br><b>Dirección:</b>
-                {% if shipping_address.company %}
-                <br>{{ shipping_address.company }}
-                {% endif %}
-                {% if shipping_address.address1 %}
-                <br>{{ shipping_address.address1 }}
-                {% endif %}
-                {% if shipping_address.address2 %}
-                <br>{{ shipping_address.address2 }}
-                {% endif %}
-                {% if shipping_address.city %}
-                <br> {{ shipping_address.city }},
-                {% endif %}
-                {% if shipping_address.province %}
-                {{ shipping_address.province }},
-                {% endif %}
-                {% if shipping_address.country %}
-                {{ shipping_address.country }}
-                {% endif %}
+                        <link rel="stylesheet"
+                            href="https://kmillionary.github.io/order-printer-template/templates.css">
+                        <div class="opt">
+                            <style></style>
+                            <div class="opt__header">
+                                <div class="opt__order-data">
+                                    <h3>Orden {{ order_number }}</h3>
+                                    <p>
+                                        <b>Nombre:</b> {{ shipping_address.name }}
+                                        <br><b>Dirección:</b>
+                                        {% if shipping_address.company %}
+                                        <br>{{ shipping_address.company }}
+                                        {% endif %}
+                                        {% if shipping_address.address1 %}
+                                        <br>{{ shipping_address.address1 }}
+                                        {% endif %}
+                                        {% if shipping_address.address2 %}
+                                        <br>{{ shipping_address.address2 }}
+                                        {% endif %}
+                                        {% if shipping_address.city %}
+                                        <br> {{ shipping_address.city }},
+                                        {% endif %}
+                                        {% if shipping_address.province %}
+                                        {{ shipping_address.province }},
+                                        {% endif %}
+                                        {% if shipping_address.country %}
+                                        {{ shipping_address.country }}
+                                        {% endif %}
 
-                <br><b>Teléfono:</b> {{ shipping_address.phone }}
-            </p>
-        </div>
-        <div class="opt__logo">
-            <img class="logo-placeholder" src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
-        </div>
-    </div>
+                                        <br><b>Teléfono:</b> {{ shipping_address.phone }}
+                                    </p>
+                                </div>
+                                <div class="opt__logo">
+                                    <img class="logo-placeholder"
+                                        src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                                        alt="logo">
+                                </div>
+                            </div>
 
-    <div class="divTable opt__line-items">
-        <div class="divTableHeading">
-            <div class="divTableRow">
-                <div class="divTableCell"><b>Producto</b></div>
-                <div class="divTableCell"><b>Cantidad</b></div>
-                <div class="divTableCell"><b>Precio</b></div>
-                <div class="divTableCell"><b>Subtotal</b></div>
-            </div>
-        </div>
-        <div class="divTableBody">
-            {% for line_item in line_items %}
-            <div class="divTableRow">
-                <div class="divTableCell">
-                    <div class="opt__line-item">
-                        <div class="opt__line-item--img">
-                            {{ line_item.image | img_url: 'thumb' | img_tag }}
+                            <div class="divTable opt__line-items">
+                                <div class="divTableHeading">
+                                    <div class="divTableRow">
+                                        <div class="divTableCell"><b>Producto</b></div>
+                                        <div class="divTableCell"><b>Cantidad</b></div>
+                                        <div class="divTableCell"><b>Precio</b></div>
+                                        <div class="divTableCell"><b>Subtotal</b></div>
+                                    </div>
+                                </div>
+                                <div class="divTableBody">
+                                    {% for line_item in line_items %}
+                                    <div class="divTableRow">
+                                        <div class="divTableCell">
+                                            <div class="opt__line-item">
+                                                <div class="opt__line-item--img">
+                                                    {{ line_item.image | img_url: 'thumb' | img_tag }}
+                                                </div>
+                                                <div style="text-align: left">
+                                                    <span>{{ line_item.title }}</span> <br>
+                                                    <span>{{ line_item.sku }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="divTableCell">{{ line_item.quantity }} x</div>
+                                        <div class="divTableCell">
+                                            {% if variant.compare_at_price != variant.price %}
+                                            <s>{{ variant.compare_at_price | money }}</s>
+                                            {% endif %}
+                                            {{ line_item.price | money }}
+                                        </div>
+                                        <div class="divTableCell">
+                                            {% assign subtotal = line_item.price | times: line_item.quantity | money %}
+                                            {{ subtotal }}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="opt__footer">
+                                <div class="opt__shop-data">
+                                    <p><b>{{ shop_name }}</b>
+                                        <br> {{ shop.address }}
+                                        <br> {{ shop.city }} {{ shop.province }}
+                                        <br> {{ shop.phone }}
+                                        <br> {{ shop.email }}
+                                        <br> {{ shop.domain }}
+                                    </p>
+
+                                </div>
+                                <div class="opt__order-summary">
+                                    <div class="divTable">
+                                        <div class="divTableBody">
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">Descuentos</div>
+                                                <div class="divTableCell"> -{{ total_discounts | money }} </div>
+                                            </div>
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">Subtotal</div>
+                                                <div class="divTableCell">{{ subtotal_price | money }}</div>
+                                            </div>
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">Envío</div>
+                                                <div class="divTableCell">{{ shipping_price | money }}</div>
+                                            </div>
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">Total</div>
+                                                <div class="divTableCell">{{ total_price | money }}</div>
+                                            </div>
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">Estatus</div>
+                                                <div class="divTableCell">
+                                                    {% if total_price == total_paid %}
+                                                    <small><b>PAGADO</b> </small>
+                                                    {% else %}
+                                                    <small><b>PENDIENTE</b> </small>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="message-placeholder">¡Gracias por su compra!</p>
                         </div>
-                        <div style="text-align: left">
-                            <span>{{ line_item.title }}</span> <br>
-                            <span>{{ line_item.sku }}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="divTableCell">{{ line_item.quantity }} x</div>
-                <div class="divTableCell">
-                    {% if variant.compare_at_price != variant.price %}
-                    <s>{{ variant.compare_at_price | money }}</s>
-                    {% endif %}
-                    {{ line_item.price | money }}
-                </div>
-                <div class="divTableCell">
-                    {% assign subtotal = line_item.price | times: line_item.quantity | money %}
-                    {{ subtotal }}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="opt__footer">
-        <div class="opt__shop-data">
-            <p><b>{{ shop_name }}</b>
-                <br> {{ shop.address }}
-                <br> {{ shop.city }} {{ shop.province }}
-                <br> {{ shop.phone }}
-                <br> {{ shop.email }}
-                <br> {{ shop.domain }}
-            </p>
-
-        </div>
-        <div class="opt__order-summary">
-            <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divTableCell">Descuentos</div>
-                        <div class="divTableCell"> -{{ total_discounts | money }} </div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">Subtotal</div>
-                        <div class="divTableCell">{{ subtotal_price | money }}</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">Envío</div>
-                        <div class="divTableCell">{{ shipping_price | money }}</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">Total</div>
-                        <div class="divTableCell">{{ total_price | money }}</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">Estatus</div>
-                        <div class="divTableCell">
-                            {% if total_price == total_paid %}
-                            <small><b>PAGADO</b> </small>
-                            {% else %}
-                            <small><b>PENDIENTE</b> </small>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p class="message-placeholder">¡Gracias por su compra!</p>
-</div>
                     </div>
                     <!-- end liquid template -->
 
                 </div>
                 <div class="ops__template-btn">
-                    <button class="ops__copy-btn">Copiar</button>
+                    <button class="ops__copy-btn"><span class="material-icons-outlined">
+                        content_copy
+                        </span>Copiar</button>
                 </div>
             </div>
             <div class="ops__template-container">
@@ -283,7 +314,8 @@
                         <div class="opt-modern__header">
                             <div class="opt-modern__logo">
                                 <img class="logo-placeholder"
-                                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                                    alt="logo">
                             </div>
                             <div class="opt-modern__shop-data">
                                 <p>
@@ -328,7 +360,7 @@
                                                 Q300.00
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 <!-- end div table -->
@@ -395,159 +427,170 @@
                     <!-- liquid template -->
                     <div class="opt__liquid">
 
-<link rel="stylesheet" href="https://kmillionary.github.io/order-printer-template/templates.css">
-<div class="opt">
-    <style></style>
-    <div class="opt-modern__header">
-        <div class="opt-modern__logo">
-            <img class="logo-placeholder"
-                src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
-                alt="logo">
-        </div>
-        <div class="opt-modern__shop-data">
-            <p>
-                <b>{{ shop_name }}</b>
-                <br> {{ shop.address }}
-                <br> {{ shop.city }}, {{ shop.province }}
-                <br> {{ shop.phone }}
-                <br> {{ shop.email }}
-                <br> {{ shop.domain }}
-            </p>
-        </div>
-    </div>
-    <div class="opt-modern__body">
-        <div class="opt-modern__order-items">
-            <!-- div table -->
-            <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divTableHead"><b>Producto</b></div>
-                        <div class="divTableHead"><b>Precio</b></div>
-                        <div class="divTableHead"><b>Cant</b></div>
-                        <div class="divTableHead"><b>Total</b></div>
-                    </div>
-                    {% for line_item in line_items %}
-                    <div class="divTableRow">
-                        <div class="divTableCell">
-                            <div class="opt__line-item">
-                                <div class="opt__line-item--img">
-                                    {{ line_item.image | img_url: 'thumb' | img_tag }}
+                        <link rel="stylesheet"
+                            href="https://kmillionary.github.io/order-printer-template/templates.css">
+                        <div class="opt">
+                            <style></style>
+                            <div class="opt-modern__header">
+                                <div class="opt-modern__logo">
+                                    <img class="logo-placeholder"
+                                        src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                                        alt="logo">
                                 </div>
-                                <div style="text-align: left">
-                                    <span>{{ line_item.title }}</span> <br>
-                                    <span>{{ line_item.sku }}</span>
+                                <div class="opt-modern__shop-data">
+                                    <p>
+                                        <b>{{ shop_name }}</b>
+                                        <br> {{ shop.address }}
+                                        <br> {{ shop.city }}, {{ shop.province }}
+                                        <br> {{ shop.phone }}
+                                        <br> {{ shop.email }}
+                                        <br> {{ shop.domain }}
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="divTableCell">
-                            {% if variant.compare_at_price != variant.price %}
-                            <s>{{ variant.compare_at_price | money }}</s>
-                            {% endif %}
-                            {{ line_item.price | money }}
-                        </div>
-                        <div class="divTableCell">{{ line_item.quantity }} x</div>
-                        <div class="divTableCell">
-                            {% assign subtotal = line_item.price | times: line_item.quantity | money %}
-                            {{ subtotal }}
-                        </div>
-                    </div>
-                    {% endfor %}
+                            <div class="opt-modern__body">
+                                <div class="opt-modern__order-items">
+                                    <!-- div table -->
+                                    <div class="divTable">
+                                        <div class="divTableBody">
+                                            <div class="divTableRow">
+                                                <div class="divTableHead"><b>Producto</b></div>
+                                                <div class="divTableHead"><b>Precio</b></div>
+                                                <div class="divTableHead"><b>Cant</b></div>
+                                                <div class="divTableHead"><b>Total</b></div>
+                                            </div>
+                                            {% for line_item in line_items %}
+                                            <div class="divTableRow">
+                                                <div class="divTableCell">
+                                                    <div class="opt__line-item">
+                                                        <div class="opt__line-item--img">
+                                                            {{ line_item.image | img_url: 'thumb' | img_tag }}
+                                                        </div>
+                                                        <div style="text-align: left">
+                                                            <span>{{ line_item.title }}</span> <br>
+                                                            <span>{{ line_item.sku }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="divTableCell">
+                                                    {% if variant.compare_at_price != variant.price %}
+                                                    <s>{{ variant.compare_at_price | money }}</s>
+                                                    {% endif %}
+                                                    {{ line_item.price | money }}
+                                                </div>
+                                                <div class="divTableCell">{{ line_item.quantity }} x</div>
+                                                <div class="divTableCell">
+                                                    {% assign subtotal = line_item.price | times: line_item.quantity |
+                                                    money %}
+                                                    {{ subtotal }}
+                                                </div>
+                                            </div>
+                                            {% endfor %}
 
-                </div>
-            </div>
-            <!-- end div table -->
-            <div class="opt-modern__order-summary">
-                <div class="divTable">
-                    <div class="divTableBody">
-                        <div class="divTableRow">
-                            <div class="divTableCell">Descuentos</div>
-                            <div class="divTableCell">  -{{ total_discounts | money }} </div>
+                                        </div>
+                                    </div>
+                                    <!-- end div table -->
+                                    <div class="opt-modern__order-summary">
+                                        <div class="divTable">
+                                            <div class="divTableBody">
+                                                <div class="divTableRow">
+                                                    <div class="divTableCell">Descuentos</div>
+                                                    <div class="divTableCell"> -{{ total_discounts | money }} </div>
+                                                </div>
+                                                <div class="divTableRow">
+                                                    <div class="divTableCell">Subtotal</div>
+                                                    <div class="divTableCell">{{ subtotal_price | money }}</div>
+                                                </div>
+                                                <div class="divTableRow">
+                                                    <div class="divTableCell">Envío</div>
+                                                    <div class="divTableCell">{{ shipping_price | money }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="total">
+                                            <p><b>Total a pagar:</b></p>
+                                            <p>{{ total_price | money }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="opt-modern__order-data">
+                                    <div class="opt-modern__order-total">
+                                        <p><b>Total a pagar</b></p>
+                                        <h3>{{ total_price | money }}</h3>
+                                    </div>
+                                    <div class="opt-modern__cust-data">
+                                        <p>
+                                            <b>Facturara a:</b>
+                                            <br>{{ shipping_address.name }}
+                                            {% if shipping_address.company %}
+                                            <br>{{ shipping_address.company }}
+                                            {% endif %}
+                                            {% if shipping_address.address1 %}
+                                            <br>{{ shipping_address.address1 }}
+                                            {% endif %}
+                                            {% if shipping_address.address2 %}
+                                            <br>{{ shipping_address.address2 }}
+                                            {% endif %}
+                                            {% if shipping_address.city %}
+                                            <br> {{ shipping_address.city }},
+                                            {% endif %}
+                                            {% if shipping_address.province %}
+                                            {{ shipping_address.province }},
+                                            {% endif %}
+                                            {% if shipping_address.country %}
+                                            {{ shipping_address.country }}
+                                            {% endif %}
+                                            <br> {{ shipping_address.phone }}
+                                        </p>
+                                    </div>
+                                    <div class="opt-modern__order-number">
+                                        <p><b>Factura no.</b>
+                                            <br> {{ order_number }}
+                                        </p>
+                                    </div>
+                                    <div class="opt-modern__order-date">
+                                        <p><b>Fecha</b>
+                                            <br> {{ created_at | date: "%d/%m/%y" }}
+                                        </p>
+                                    </div>
+                                    <div class="opt-modern__payment-status">
+                                        <p><b>Estatus</b>
+                                            {% if total_price == total_paid %}
+                                            <br><small>PAGADO</small>
+                                            {% else %}
+                                            <br><small>PENDIENTE</small>
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="opt-modern__footer">
+                                {% if note %}
+                                <p><b>Notas:</b></p>
+                                <p>{{ note }}</p>
+                                {% endif %}
+                                <p class="message-placeholder">¡Gracias por su compra!</p>
+                            </div>
                         </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">Subtotal</div>
-                            <div class="divTableCell">{{ subtotal_price | money }}</div>
-                        </div>
-                        <div class="divTableRow">
-                            <div class="divTableCell">Envío</div>
-                            <div class="divTableCell">{{ shipping_price | money }}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="total">
-                    <p><b>Total a pagar:</b></p>
-                    <p>{{ total_price | money }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="opt-modern__order-data">
-            <div class="opt-modern__order-total">
-                <p><b>Total a pagar</b></p>
-                <h3>{{ total_price | money }}</h3>
-            </div>
-            <div class="opt-modern__cust-data">
-                <p>
-                    <b>Facturara a:</b> 
-                    <br>{{ shipping_address.name }}
-                    {% if shipping_address.company %}
-                    <br>{{ shipping_address.company }}
-                    {% endif %}
-                    {% if shipping_address.address1 %}
-                    <br>{{ shipping_address.address1 }}
-                    {% endif %}
-                    {% if shipping_address.address2 %}
-                    <br>{{ shipping_address.address2 }}
-                    {% endif %}
-                    {% if shipping_address.city %}
-                    <br> {{ shipping_address.city }},
-                    {% endif %}
-                    {% if shipping_address.province %}
-                    {{ shipping_address.province }},
-                    {% endif %}
-                    {% if shipping_address.country %}
-                    {{ shipping_address.country }}
-                    {% endif %}
-                    <br> {{ shipping_address.phone }}
-                </p>
-            </div>
-            <div class="opt-modern__order-number">
-                <p><b>Factura no.</b>
-                    <br> {{ order_number }}
-                </p>
-            </div>
-            <div class="opt-modern__order-date">
-                <p><b>Fecha</b>
-                    <br> {{ created_at | date: "%d/%m/%y" }}
-                </p>
-            </div>
-            <div class="opt-modern__payment-status">
-                <p><b>Estatus</b> 
-                    {% if total_price == total_paid %}
-                    <br><small>PAGADO</small>
-                    {% else %}
-                    <br><small>PENDIENTE</small>
-                    {% endif %}
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="opt-modern__footer">
-        {% if note %}    
-        <p><b>Notas:</b></p>
-        <p>{{ note }}</p>
-        {% endif %}
-        <p class="message-placeholder">¡Gracias por su compra!</p>
-    </div>
-</div>
                     </div>
                     <!-- end liquid template -->
 
                 </div>
                 <div class="ops__template-btn">
-                    <button class="ops__copy-btn">Copiar</button>
+                    <button class="ops__copy-btn">
+                        <span class="material-icons-outlined">content_copy</span>
+                        <span>Copiar</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
+    <footer>
+        <p>Diseñado por <a href="https://k-million.com" target="_blank">k-million</a>  
+            <br> Todos los logos y contenido son propiedad de k-million
+            <br> Todos los derechos resevados
+        </p>
+    </footer>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="app.js"></script>
