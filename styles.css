@@ -82,19 +82,17 @@ body {
 }
 
 button#btnUrl {
- background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%); 
-  width: 100%;
-  padding: 20px 45px;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  padding: 10px 20px;
   text-align: center;
   text-transform: capitalize;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
   border: none;
-  font-size: 18px;
-  margin: 20px 0 0 0;
+  font-size: 16px;
 }
 
 button#btnUrl:hover {
@@ -184,7 +182,7 @@ button#btnUrl:hover {
     .ops__form {
         width: 40%;
         position: sticky;
-        top:80px;
+        top: 15px;
         display:inline-block;
     }
 }
