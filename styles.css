@@ -39,7 +39,7 @@ hr {
 
 button {
     cursor: pointer;
-    font-size: bold;
+    font-weight: bold;
 }
 
 .kmillion__logo-wrapper {
