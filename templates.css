@@ -1,4 +1,7 @@
 /* _Compact_template */
+p {
+    margin: 1em 0;
+}
 
 .opt {
     padding: 10px;
