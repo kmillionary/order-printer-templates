@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="templates.css">
 </head>
@@ -38,7 +38,7 @@
                 <label for="width">Ancho del logo (px)</label>
                 <div class="logo-width">
                     <input type="number" name="width" id="logoWidth" value="150" max="250" min="50" step="5">
-                    <input type="range" name="range-width" id="rangeWidth" step="5" min="50" max="250" value="150">
+                    <input type="range" name="range-width" id="rangeWidth" value="150" max="250" min="50" step="5">
                 </div>
             </div>
             <div class="ops__form-item">
@@ -64,7 +64,7 @@
                 <h3>Compact</h3>
                 <div class="ops__template-content">
                     <!-- compact template -->
-                    <div class="opt">
+                    <div class="opt" id="compact">
                         <style></style>
                         <div class="opt__header">
                             <div class="opt__order-data">
@@ -300,9 +300,14 @@
 
                 </div>
                 <div class="ops__template-btn">
-                    <button class="ops__copy-btn"><span class="material-icons-outlined">
-                        content_copy
-                        </span>Copiar</button>
+                    <button class="ops__print-btn" onclick="printJS('compact', 'html')">
+                        <span class="material-icons-outlined">print</span>
+                        Imprimir vista previa
+                    </button>
+                    <button class="ops__copy-btn">
+                        <span class="material-icons-outlined">content_copy</span>
+                        Copiar
+                    </button>
                 </div>
             </div>
             <div class="ops__template-container">
@@ -520,7 +525,7 @@
                                     </div>
                                     <div class="opt-modern__cust-data">
                                         <p>
-                                            <b>Facturara a:</b>
+                                            <b>Facturar a:</b>
                                             <br>{{ shipping_address.name }}
                                             {% if shipping_address.company %}
                                             <br>{{ shipping_address.company }}
@@ -592,7 +597,8 @@
         </p>
     </footer>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
     <script src="app.js"></script>
 </body>
 

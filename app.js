@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('load', function () {
-    //template father
+    //template container
     const opts = document.querySelectorAll('.opt');
 
     //Order Printer templates logo subtitution
@@ -37,8 +37,6 @@ window.addEventListener('load', function () {
                 `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
             })
 
-
-
             Swal.fire({
                 icon: "success",
                 title: "¡Plantillas listas!",
@@ -46,7 +44,6 @@ window.addEventListener('load', function () {
                 timer: 3000,
                 showConfirmButton: true
             });
-
 
         } else {
             Swal.fire({
@@ -57,7 +54,6 @@ window.addEventListener('load', function () {
                 showConfirmButton: true
             });
         }
-
     })
 
     //Color input

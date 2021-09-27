@@ -184,6 +184,7 @@ button#btnUrl:hover {
   color: cornflowerblue;
 }
 
+.ops__print-btn,
 .ops__form-btn button[type=reset] {
   display: inline;
   background: none;
@@ -193,6 +194,7 @@ button#btnUrl:hover {
   margin-right: 20px;
 }
 
+.ops__print-btn:hover,
 .ops__form-btn button[type=reset]:hover {
   opacity: 0.6;
 }
@@ -225,14 +227,17 @@ button#btnUrl:hover {
 
 .ops__template-btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
+
+.ops__print-btn,
 .ops__copy-btn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.ops__print-btn span:first-of-type,
 .ops__copy-btn span:first-of-type {
     margin-right: 5px;
 }
