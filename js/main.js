@@ -8,19 +8,19 @@ window.addEventListener('load', function () {
     const btnUrl = document.querySelector('#btnUrl');
     const logoUrl = document.querySelector('#logoUrl');
     const imgSrc = document.querySelectorAll('.logo-placeholder')
-    
+
     //Color input
     let primaryColor = this.document.querySelector('#primaryColor');
-    
+
     //logo width
     const logoWidth = document.querySelector('#logoWidth');
     const rangeWidth = document.querySelector('#rangeWidth');
-    
+
     //message
     const tempTextarea = document.querySelector('#message');
     const messagePlaceholder = document.querySelectorAll('.message-placeholder')
-    
-    
+
+
     rangeWidth.addEventListener('change', function () {
         logoWidth.value = rangeWidth.value;
     })
@@ -33,8 +33,8 @@ window.addEventListener('load', function () {
 
             opts.forEach(opt => {
                 opt.firstElementChild.innerHTML = "";
-                opt.firstElementChild.innerHTML = 
-                `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
+                opt.firstElementChild.innerHTML =
+                    `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
             })
 
             Swal.fire({
@@ -57,7 +57,6 @@ window.addEventListener('load', function () {
     })
 
     //Color input
-
 
     //Order printer template copy function
 

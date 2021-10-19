@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Diego Santisteban -- Developer -- @KmillionGT
+
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JavaSript, Modernizr, Normalize.css
