@@ -75,7 +75,7 @@ window.addEventListener('load', function () {
 
         Swal.fire({
             icon: "success",
-            title: "HTML copiado",
+            title: "Código copiado",
             toast: true,
             position: "top-end",
             timer: 2000,
