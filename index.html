@@ -50,12 +50,25 @@
       <a class="kmillion__contact-us" href="https://k-million.com/pages/contactanos">Contáctanos</a>
     </div>
   </header>
-  <section class="ops">
+  <section class="oph">
+    <div class="oph__title">
+      <h1>Generador de plantillas para Order Printer de Shopify</h1>
+      <p>Imprime facturas y recibos desde Shopify. Utiliza la aplicación <a href="https://apps.shopify.com/order-printer" target="_blank"
+        rel="noopener noreferrer">Order Printer</a> para imprimir estas plantillas desde tu tienda.</p>
+        <p>Es muy sencillo:</p>
+        <ol>
+          <li>Personaliza con tu logo y colores</li>
+          <li>Copia el código</li>
+          <li>Pega el código en la App Order Printer</li>
+        </ol>
+    </div>
+    <div class="oph__tutorial">
+     <div class="video-container"> <iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/O_I4BndslYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </section>
+  <main class="ops">
     <form onsubmit="return false" class="ops__form">
       <h3>Personaliza tu plantilla</h3>
-      <p>Utiliza la aplicación <a href="https://apps.shopify.com/order-printer" target="_blank"
-          rel="noopener noreferrer">Order Printer</a> para imprimir estas plantillas desde tu tienda Shopify</p>
-      <hr>
       <div class="ops__form-item">
         <label for="url">Ingresa la URL de tu logo</label>
         <input type="url" name="url" id="logoUrl" placeholder="https://cdn.shopify.com/...">
@@ -80,7 +93,7 @@
             restart_alt
           </span></button>
         <button id="btnUrl">
-          <span class="material-icons-outlined">format_paint</span>
+          <span class="material-icons-outlined">brush</span>
           <span>Personalizar</span>
         </button>
       </div>
@@ -620,13 +633,18 @@
         </div>
       </div>
     </div>
+  </main>
+  
+  <section class="help-us">
+    <h3>Ayudanos a mejorar</h3>
+    <p>Sugiere cambios o solicita nuevas funciones a <a href="mailto:soporte@k-million.com">soporte@k-million.com</a>, ¡Grácias!</p>
   </section>
-
   <footer>
     <p>Diseñado por <a href="https://k-million.com" target="_blank">k-million</a>
       <br> Todos los logos y contenido son propiedad de k-million
       <br> Todos los derechos resevados
     </p>
+ 
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
