@@ -424,6 +424,12 @@ button#btnUrl:hover {
   }
 }
 
+.help-us {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
 .opt {
   padding: 10px;
   min-width: 600px;
