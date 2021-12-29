@@ -24,6 +24,15 @@ rangeWidth.addEventListener('change', function () {
     logoWidth.value = rangeWidth.value;
 })
 
+//Removing unsupported attributes in liquid templates
+const attributeRemover = function (selector, attribute) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+        el.removeAttribute(attribute);
+    })
+}
+
+
 //set templates
 btnUrl.addEventListener('click', function () {
     if (logoUrl.value) {
@@ -35,6 +44,8 @@ btnUrl.addEventListener('click', function () {
             opt.firstElementChild.innerHTML =
                 `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
         })
+        attributeRemover('link', 'wfs-invisible')
+        attributeRemover('style', 'wfs-invisible')
 
         Swal.fire({
             icon: "success",
@@ -88,12 +99,4 @@ opsCopyBtn.forEach((btn, i) => {
     })
 })
 
-// //Removing unsupported attribute wfs-invisible 
-// const attributeRemover = function (selector, attribute) {
-//     const elements = document.querySelectorAll(selector);
-//     elements.forEach(el => {
-//         el.removeAttribute(attribute);
-//     })
-// }
-// attributeRemover('link', 'wfs-invisible')
-// attributeRemover('style', 'wfs-invisible')
+
