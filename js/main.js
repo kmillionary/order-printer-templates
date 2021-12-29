@@ -44,8 +44,8 @@ btnUrl.addEventListener('click', function () {
             opt.firstElementChild.innerHTML =
                 `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
         })
-        attributeRemover('link', 'wfs-invisible')
-        attributeRemover('style', 'wfs-invisible')
+        attributeRemover('link', 'wfd-invisible')
+        attributeRemover('style', 'wfd-invisible')
 
         Swal.fire({
             icon: "success",
