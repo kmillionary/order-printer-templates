@@ -44,8 +44,6 @@ btnUrl.addEventListener('click', function () {
             opt.firstElementChild.innerHTML =
                 `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
         })
-        attributeRemover('link', 'wfd-invisible')
-        attributeRemover('style', 'wfd-invisible')
 
         Swal.fire({
             icon: "success",
@@ -74,11 +72,15 @@ const opsCopyBtn = document.querySelectorAll('.ops__copy-btn');
 const liquidTemplates = document.querySelectorAll('.opt__liquid');
 
 const copyToClip = function (str) {
+    attributeRemover('link', 'wfd-invisible');
+    attributeRemover('style', 'wfd-invisible');
+
     function listener(e) {
         e.clipboardData.setData("text/html", str);
         e.clipboardData.setData("text/plain", str);
         e.preventDefault();
     }
+    
     document.addEventListener("copy", listener);
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
