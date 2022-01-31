@@ -9,7 +9,8 @@ const logoUrl = document.querySelector('#logoUrl');
 const imgSrc = document.querySelectorAll('.logo-placeholder')
 
 //Color input
-let primaryColor = this.document.querySelector('#primaryColor');
+let primaryColor = document.querySelector('#primaryColor');
+const primaryColorInput = document.querySelector('#primaryColorInput');
 
 //logo width
 const logoWidth = document.querySelector('#logoWidth');
@@ -20,8 +21,13 @@ const tempTextarea = document.querySelector('#message');
 const messagePlaceholder = document.querySelectorAll('.message-placeholder')
 
 
-rangeWidth.addEventListener('change', function () {
-    logoWidth.value = rangeWidth.value;
+
+rangeWidth.addEventListener('input', function () {  
+    logoWidth.innerText = rangeWidth.value + 'px';
+})
+
+primaryColor.addEventListener('input', function () {  
+    primaryColorInput.innerText = primaryColor.value;
 })
 
 //Removing unsupported attributes in liquid templates
@@ -42,7 +48,7 @@ btnUrl.addEventListener('click', function () {
         opts.forEach(opt => {
             opt.firstElementChild.innerHTML = "";
             opt.firstElementChild.innerHTML =
-                `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${logoWidth.value}px;}`;
+                `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${rangeWidth.value}px;}`;
         })
 
         Swal.fire({
