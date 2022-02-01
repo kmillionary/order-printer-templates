@@ -19,7 +19,8 @@ p {
     width: 60%;
 }
 
-.opt__order-data h3 {
+.opt__order-data h3,
+.opt__order-data h2 {
     margin-top: 0;
     margin-bottom: 1em;
 }
@@ -31,7 +32,8 @@ p {
 }
 
 .opt__header .opt__logo img {
-    max-width: 250px;
+    max-width: 300px;
+    width: 200px;
     height: auto;
 }
 
@@ -62,6 +64,23 @@ p {
     border-bottom: none;
 }
 
+.opt__end {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opt__end .signature-placeholder {
+    margin-top: 6em;
+    width: 30%;
+    text-align: center;
+}
+
+.opt__end .signature-placeholder span {
+    display: block;
+    border-top: 1px solid black;
+    width: 100%;
+}
+
 /* _Modern_template */
 
 .opt-modern__header {
@@ -85,7 +104,8 @@ p {
 }
 
 .opt-modern__logo img {
-    max-width: 250px;
+    max-width: 300px;
+    width: 200px;
     height: auto;
 }
 
@@ -155,6 +175,7 @@ p {
 .opt p.message-placeholder {
     color: rgb(133, 133, 133);
     font-style: italic;
+    max-width: 300px;
 }
 
 /* Div table */
@@ -201,3 +222,23 @@ p {
 .divTableBody {
     display: table-row-group;
 }
+
+/* Shipping */
+ .opt#shipping .opt__header {
+     flex-direction: row-reverse;
+ }
+
+ .opt#shipping .opt__header .opt__logo {
+     text-align: left;
+     margin-left: 0;
+ }
+
+ .opt#shipping h3 {
+    text-align: right;
+ }
+
+ .opt#shipping {
+     max-width: 500px;
+     border: 2px solid rgb(133, 133, 133);
+     padding: 20px;
+ }

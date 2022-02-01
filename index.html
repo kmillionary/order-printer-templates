@@ -9,10 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <title>Plantillas para Order Printer de Shopify - k-million</title>
-  <meta name="description" content="Personaliza plantillas para la aplicación Order Printer de Shopify. Plantillas GRATIS para imprimir etiquetas de envío y facturas desde Shopify.">
+  <meta name="description"
+    content="Personaliza plantillas para la aplicación Order Printer de Shopify. Plantillas GRATIS para imprimir etiquetas de envío y facturas desde Shopify.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <meta property="og:title" content="Plantillas para Order Printer by k-million">
   <meta property="og:type" content="website">
@@ -53,50 +54,81 @@
   <section class="oph">
     <div class="oph__title">
       <h1>Generador de plantillas para Order Printer de Shopify</h1>
-      <p>Imprime facturas y recibos desde Shopify. Utiliza la aplicación <a href="https://apps.shopify.com/order-printer" target="_blank"
-        rel="noopener noreferrer">Order Printer</a> para imprimir estas plantillas desde tu tienda.</p>
-        <p>Es muy sencillo:</p>
-        <ol>
-          <li>Personaliza con tu logo y colores</li>
-          <li>Copia el código</li>
-          <li>Pega el código en la App Order Printer</li>
-        </ol>
+      <p>Imprime facturas y recibos desde Shopify. Utiliza la aplicación <a
+          href="https://apps.shopify.com/order-printer" target="_blank" rel="noopener noreferrer">Order Printer</a> para
+        imprimir estas plantillas desde tu tienda.</p>
+      <p>Es muy sencillo:</p>
+      <ol>
+        <li>Personaliza con tu logo y colores</li>
+        <li>Copia el código</li>
+        <li>Pega el código en la App Order Printer</li>
+      </ol>
     </div>
     <div class="oph__tutorial">
-     <div class="video-container"> <iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/O_I4BndslYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="video-container"> <iframe class="responsive-iframe" width="560" height="315"
+          src="https://www.youtube.com/embed/O_I4BndslYQ" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe></div>
     </div>
   </section>
   <main class="ops">
     <form onsubmit="return false" class="ops__form">
       <h3>Personaliza tu plantilla</h3>
-      <div class="ops__form-item">
-        <label for="url">Ingresa la URL de tu logo</label>
-        <input type="url" name="url" id="logoUrl" placeholder="https://cdn.shopify.com/...">
+      <div class="tab-buttons">
+        <ul>
+          <li class="tab-btn active">Diseño</li>
+          <li class="tab-btn">Contenido</li>
+        </ul>
       </div>
-      <div class="ops__form-item">
-        <label for="width">Ancho del logo (px)</label>
-        <div class="logo-width">
-          <input type="range" name="range-width" id="rangeWidth" value="150" max="250" min="50" step="5">
-          <span id="logoWidth">150px</span>
+      <div class="tab-panel active">
+        <div class="ops__form-item">
+          <label for="url">Ingresa la URL de tu logo</label>
+          <input type="url" name="url" id="logoUrl" placeholder="https://cdn.shopify.com/...">
+        </div>
+        <div class="ops__form-item">
+          <label for="width">Ancho del logo (px)</label>
+          <div class="logo-width">
+            <input type="range" name="range-width" id="rangeWidth" value="200" max="300" min="50" step="5">
+            <span id="logoWidth">200px</span>
+          </div>
+        </div>
+        <div class="ops__form-item">
+          <label for="primary">Color de encabezados</label>
+          <div class="headings-color">
+            <input type="color" value="#000000" name="primary" id="primaryColor">
+            <span id="primaryColorInput">#000000</span>
+          </div>
         </div>
       </div>
-      <div class="ops__form-item">
-        <label for="primary">Color de encabezados</label>
-        <div class="headings-color">
-          <input type="color" value="#000000" name="primary" id="primaryColor">
-          <span id="primaryColorInput">#000000</span>
+      <div class="tab-panel content">
+        <label class="ops__form-item" for="logo">Logo
+          <input type="checkbox" name="logo" id="logo" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="ops__form-item" for="businessInfo">Información del negocio
+          <input type="checkbox" name="businessInfo" id="businessInfo" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="ops__form-item" for="customerInfo">Información del cliente
+          <input type="checkbox" name="customerInfo" id="customerInfo" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="ops__form-item" for="paymentInfo">Información de pago
+          <input type="checkbox" name="paymentInfo" id="paymentInfo" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="ops__form-item" for="signature">Firma de recibido
+          <input type="checkbox" name="signature" id="signature" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="ops__form-item" for="notes">Notas del cliente
+          <input type="checkbox" name="notes" id="notes" checked>
+          <span class="checkmark"></span>
+        </label>
+        <div class="ops__form-item">
+          <label for="primary">Texto al pie de página</label>
+          <textarea name="message" id="message" rows="3" placeholder="¡Gracias por su compra!"></textarea>
         </div>
-      </div>
-      <div class="ops__form-item">
-        <label for="primary">Texto al pie de página</label>
-        <textarea name="message" id="message" rows="3" placeholder="¡Gracias por su compra!"></textarea>
-      </div>
-      <div class="ops__form-btn">
-        <button type="reset">Limpiar</button>
-        <button id="btnUrl">
-          <span class="material-icons-outlined">brush</span>
-          <span>Personalizar</span>
-        </button>
       </div>
     </form>
     <div class="ops__templates">
@@ -109,7 +141,7 @@
             <div class="opt__header">
               <div class="opt__order-data">
                 <h3>ORDEN 1001</h3>
-                <p>
+                <p class="order-data">
                   <b>Nombre:</b> Nombre del Cliente
                   <br><b>Dirección:</b>
                   <br>Empresa Acme
@@ -119,8 +151,10 @@
                 </p>
               </div>
               <div class="opt__logo">
-                <img class="logo-placeholder"
-                  src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                <div class="logo">
+                  <img class="logo-placeholder"
+                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                </div>
               </div>
             </div>
 
@@ -171,7 +205,7 @@
 
             <div class="opt__footer">
               <div class="opt__shop-data">
-                <p><b>Nombre Tienda</b>
+                <p class="business-data"><b>Nombre Tienda</b>
                   <br> Dirección Tienda
                   <br> +(502) 5555-5555
                   <br> ayuda@mitienda.com
@@ -179,7 +213,7 @@
                 </p>
 
               </div>
-              <div class="opt__order-summary">
+              <div class="opt__order-summary payment-data">
                 <div class="divTable">
                   <div class="divTableBody">
                     <div class="divTableRow">
@@ -206,10 +240,22 @@
                 </div>
               </div>
             </div>
-            <p class="message-placeholder">¡Gracias por su compra!</p>
+            <div class="opt__end">
+              <div>
+                <div class="note-placeholder">
+                  <p><b>Notas:</b></p>
+                  <p>Cualquier nota en el pedido del cliente</p>
+                </div>
+                <p class="message-placeholder"></p>
+              </div>
+              <div class="signature-placeholder">
+                <span></span>
+                <p>Firma de recibido</p>
+              </div>
+            </div>
           </div>
           <!-- end compact template -->
-          <!-- liquid template -->
+          <!-- compact liquid template -->
           <div class="opt__liquid">
 
             <link rel="stylesheet" href="https://kmillionary.github.io/order-printer-templates/css/templates.css">
@@ -218,7 +264,7 @@
               <div class="opt__header">
                 <div class="opt__order-data">
                   <h3>ORDEN {{ order_number }}</h3>
-                  <p>
+                  <p class="order-data">
                     <b>Nombre:</b> {{ shipping_address.name }}
                     <br><b>Dirección:</b>
                     {% if shipping_address.company %}
@@ -244,9 +290,11 @@
                   </p>
                 </div>
                 <div class="opt__logo">
-                  <img class="logo-placeholder"
-                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
-                    alt="logo">
+                  <div class="logo">
+                    <img class="logo-placeholder"
+                      src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                      alt="logo">
+                  </div>
                 </div>
               </div>
 
@@ -291,7 +339,7 @@
 
               <div class="opt__footer">
                 <div class="opt__shop-data">
-                  <p><b>{{ shop_name }}</b>
+                  <p class="business-data"><b>{{ shop_name }}</b>
                     <br> {{ shop.address }}
                     <br> {{ shop.city }} {{ shop.province }}
                     <br> {{ shop.phone }}
@@ -300,7 +348,7 @@
                   </p>
 
                 </div>
-                <div class="opt__order-summary">
+                <div class="opt__order-summary payment-data">
                   <div class="divTable">
                     <div class="divTableBody">
                       <div class="divTableRow">
@@ -333,10 +381,24 @@
                   </div>
                 </div>
               </div>
-              <p class="message-placeholder">¡Gracias por su compra!</p>
+              <div class="opt__end">
+                <div>
+                  {% if note %}
+                    <div class="note-placeholder">
+                      <p><b>Notas:</b></p>
+                      <p>{{ note }}</p>
+                    </div>
+                  {% endif %}
+                  <p class="message-placeholder"></p>
+                </div>
+                <div class="signature-placeholder">
+                  <span></span>
+                  <p>Firma de recibido</p>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- end liquid template -->
+          <!-- end compact liquid template -->
 
         </div>
         <div class="ops__template-btn">
@@ -359,11 +421,13 @@
             <style></style>
             <div class="opt-modern__header">
               <div class="opt-modern__logo">
-                <img class="logo-placeholder"
-                  src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                <div class="logo">
+                  <img class="logo-placeholder"
+                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                </div>
               </div>
               <div class="opt-modern__shop-data">
-                <p>
+                <p class="business-data">
                   <b>Nombre Tienda</b>
                   <br> Calle Lorem avenida ipsum
                   <br> Guatemala, Guatemala
@@ -410,7 +474,7 @@
                   </div>
                 </div>
                 <!-- end div table -->
-                <div class="opt-modern__order-summary">
+                <div class="opt-modern__order-summary payment-data">
                   <div class="divTable">
                     <div class="divTableBody">
                       <div class="divTableRow">
@@ -434,11 +498,11 @@
                 </div>
               </div>
               <div class="opt-modern__order-data">
-                <div class="opt-modern__order-total">
+                <div class="opt-modern__order-total payment-data">
                   <p><b>Total a pagar</b></p>
                   <h3>Q300.00</h3>
                 </div>
-                <div class="opt-modern__cust-data">
+                <div class="opt-modern__cust-data order-data">
                   <p><b>Facturar a</b>
                     <br> Nombre del Cliente
                     <br> Empresa Acme
@@ -456,7 +520,7 @@
                     <br> 02/09/2021
                   </p>
                 </div>
-                <div class="opt-modern__payment-status">
+                <div class="opt-modern__payment-status payment-data">
                   <p><b>Estatus</b>
                     <br><small>PAGADO</small>
                   </p>
@@ -464,9 +528,19 @@
               </div>
             </div>
             <div class="opt-modern__footer">
-              <p><b>Notas:</b></p>
-              <p>Cualquier nota en el pedido del cliente</p>
-              <p class="message-placeholder">¡Gracias por su compra!</p>
+              <div class="opt__end">
+                <div>
+                  <div class="note-placeholder">
+                    <p><b>Notas:</b></p>
+                    <p>Cualquier nota en el pedido del cliente</p>
+                  </div>
+                  <p class="message-placeholder"></p>
+                </div>
+                <div class="signature-placeholder">
+                  <span></span>
+                  <p>Firma de recibido</p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- end modern template -->
@@ -478,12 +552,14 @@
               <style></style>
               <div class="opt-modern__header">
                 <div class="opt-modern__logo">
-                  <img class="logo-placeholder"
-                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
-                    alt="logo">
+                  <div class="logo">
+                    <img class="logo-placeholder"
+                      src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157"
+                      alt="logo">
+                  </div>
                 </div>
                 <div class="opt-modern__shop-data">
-                  <p>
+                  <p class="business-data">
                     <b>{{ shop_name }}</b>
                     <br> {{ shop.address }}
                     <br> {{ shop.city }}, {{ shop.province }}
@@ -535,7 +611,7 @@
                     </div>
                   </div>
                   <!-- end div table -->
-                  <div class="opt-modern__order-summary">
+                  <div class="opt-modern__order-summary payment-data">
                     <div class="divTable">
                       <div class="divTableBody">
                         <div class="divTableRow">
@@ -559,12 +635,12 @@
                   </div>
                 </div>
                 <div class="opt-modern__order-data">
-                  <div class="opt-modern__order-total">
+                  <div class="opt-modern__order-total payment-data">
                     <p><b>Total a pagar</b></p>
                     <h3>{{ total_price | money }}</h3>
                   </div>
                   <div class="opt-modern__cust-data">
-                    <p>
+                    <p class="order-data">
                       <b>Facturar a:</b>
                       <br>{{ shipping_address.name }}
                       {% if shipping_address.company %}
@@ -598,7 +674,7 @@
                       <br> {{ created_at | date: "%d/%m/%y" }}
                     </p>
                   </div>
-                  <div class="opt-modern__payment-status">
+                  <div class="opt-modern__payment-status payment-data">
                     <p><b>Estatus</b>
                       {% if total_price == total_paid %}
                       <br><small>PAGADO</small>
@@ -610,11 +686,21 @@
                 </div>
               </div>
               <div class="opt-modern__footer">
-                {% if note %}
-                <p><b>Notas:</b></p>
-                <p>{{ note }}</p>
-                {% endif %}
-                <p class="message-placeholder">¡Gracias por su compra!</p>
+                <div class="opt__end">
+                  <div>
+                    {% if note %}
+                      <div class="note-placeholder">
+                        <p><b>Notas:</b></p>
+                        <p>{{ note }}</p>
+                      </div>
+                    {% endif %}
+                    <p class="message-placeholder"></p>
+                  </div>
+                  <div class="signature-placeholder">
+                    <span></span>
+                    <p>Firma de recibido</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -633,19 +719,103 @@
           </button>
         </div>
       </div>
+      <div class="ops__template-container">
+        <h3>Etiqueta de Envío</h3>
+        <div class="ops__template-content">
+          <!-- shipping label template -->
+          <div class="opt" id="shipping">
+            <style></style>
+            <div class="opt__header">
+              <div class="opt__order-data">
+                <h3>ORDEN 1001</h3>
+              </div>
+              <div class="opt__logo">
+                <div class="logo">
+                  <img class="logo-placeholder"
+                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="opt__order-data order-data">
+                <b>Nombre:</b> Nombre del Cliente
+                <br><b>Dirección:</b>
+                <br>Empresa Acme
+                <br>Calle Lorem Avenida Ipsum
+                <br> Guatemala, Guatemala
+                <br><b>Teléfono:</b> +(502) 5555-5555
+              </p>
+            </div>
+        </div>
+        <!-- end shipping label template -->
+        <!-- liquid shipping label template -->
+        <div class="opt__liquid">
+          <link rel="stylesheet" href="https://kmillionary.github.io/order-printer-templates/css/templates.css">
+          <style></style>
+            <div class="opt__header">
+              <div class="opt__order-data">
+                <h3>ORDEN {{ order_number }}</h3>
+              </div>
+              <div class="opt__logo">
+                <div class="logo">
+                  <img class="logo-placeholder"
+                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="order-data">
+                <b>Nombre:</b> {{ shipping_address.name }}
+                <br><b>Dirección:</b>
+                {% if shipping_address.company %}
+                <br>{{ shipping_address.company }}
+                {% endif %}
+                {% if shipping_address.address1 %}
+                <br>{{ shipping_address.address1 }}
+                {% endif %}
+                {% if shipping_address.address2 %}
+                <br>{{ shipping_address.address2 }}
+                {% endif %}
+                {% if shipping_address.city %}
+                <br> {{ shipping_address.city }},
+                {% endif %}
+                {% if shipping_address.province %}
+                {{ shipping_address.province }},
+                {% endif %}
+                {% if shipping_address.country %}
+                {{ shipping_address.country }}
+                {% endif %}
+                <br><b>Teléfono:</b> {{ shipping_address.phone }}
+              </p>
+            </div>
+        </div>
+        <!-- end liquid shipping label template -->
+      </div>
+      <div class="ops__template-btn">
+        <button class="ops__print-btn"
+          onclick="printJS({ printable: 'shipping', type: 'html', css: 'https://kmillionary.github.io/order-printer-templates/css/templates.css' })">
+          <span class="material-icons-outlined">print</span>
+          Imprimir vista previa
+        </button>
+        <button class="ops__copy-btn">
+          <span class="material-icons-outlined">content_copy</span>
+          <span>Copiar</span>
+        </button>
+      </div>
     </div>
   </main>
-  
+
   <section class="help-us">
     <h3>Ayudanos a mejorar</h3>
-    <p>Sugiere cambios o solicita nuevas funciones a <a href="mailto:soporte@k-million.com">soporte@k-million.com</a>, ¡Gracias!</p>
+    <p>Sugiere cambios o solicita nuevas funciones a <a href="mailto:soporte@k-million.com">soporte@k-million.com</a>,
+      ¡Gracias!</p>
   </section>
   <footer>
     <p>Diseñado por <a href="https://k-million.com" target="_blank">k-million</a>
       <br> Todos los logos y contenido son propiedad de k-million
       <br> Todos los derechos resevados
     </p>
- 
+
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

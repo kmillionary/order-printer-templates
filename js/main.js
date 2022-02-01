@@ -7,6 +7,7 @@ const opts = document.querySelectorAll('.opt');
 const btnUrl = document.querySelector('#btnUrl');
 const logoUrl = document.querySelector('#logoUrl');
 const imgSrc = document.querySelectorAll('.logo-placeholder')
+const dummyLogo = 'https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157'
 
 //Color input
 let primaryColor = document.querySelector('#primaryColor');
@@ -16,18 +17,76 @@ const primaryColorInput = document.querySelector('#primaryColorInput');
 const logoWidth = document.querySelector('#logoWidth');
 const rangeWidth = document.querySelector('#rangeWidth');
 
-//message
+//content options
+const logo = document.querySelector('#logo');
+const businessInfo = document.querySelector('#businessInfo');
+const customerInfo = document.querySelector('#customerInfo');
+const paymentInfo = document.querySelector('#paymentInfo');
+const signature = document.querySelector('#signature');
+const notes = document.querySelector('#notes');
 const tempTextarea = document.querySelector('#message');
+
+//content containers
+const logoPlaceholder = document.querySelectorAll('.logo');
+const businessData = document.querySelectorAll('.business-data');
+const orderData = document.querySelectorAll('.order-data');
+const paymentData = document.querySelectorAll('.payment-data');
+const signaturePlaceholder = document.querySelectorAll('.signature-placeholder');
+const notesPlaceholders = document.querySelectorAll('.note-placeholder');
 const messagePlaceholder = document.querySelectorAll('.message-placeholder')
 
+//Tab component
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
 
+tabBtns.forEach((btn, i) => {
+    tabBtns[i].addEventListener('click', () => {
+        tabBtns.forEach((btn, i) => {
+            tabBtns[i].classList.remove('active');
+            tabPanels[i].classList.remove('active');
+        })
 
-rangeWidth.addEventListener('input', function () {  
-    logoWidth.innerText = rangeWidth.value + 'px';
+        tabBtns[i].classList.add('active');
+        tabPanels[i].classList.add('active');
+    })
 })
 
-primaryColor.addEventListener('input', function () {  
+//updating content
+const updateTemplate = function (checkboxId, container) {
+    checkboxId.addEventListener('change', () => {
+        container.forEach(el => {
+            el.style.display = `${checkboxId.checked ? 'block' : 'none'}`
+        })
+    })
+}
+
+updateTemplate(logo, logoPlaceholder)
+updateTemplate(businessInfo, businessData)
+updateTemplate(customerInfo, orderData)
+updateTemplate(paymentInfo, paymentData)
+updateTemplate(signature, signaturePlaceholder)
+updateTemplate(notes, notesPlaceholders)
+
+tempTextarea.addEventListener('input', () =>{
+    messagePlaceholder.forEach(msg => msg.innerText = tempTextarea.value);
+})
+
+logoUrl.addEventListener('input', () => {
+    imgSrc.forEach(img => img.src = logoUrl.value == '' ? dummyLogo : logoUrl.value )
+})
+
+rangeWidth.addEventListener('input', function () {
+    logoWidth.innerText = rangeWidth.value + 'px';
+    imgSrc.forEach(img => img.style.width = rangeWidth.value + 'px')
+})
+
+primaryColor.addEventListener('input', function () {
     primaryColorInput.innerText = primaryColor.value;
+    opts.forEach(opt => {
+        opt.firstElementChild.innerHTML = "";
+        opt.firstElementChild.innerHTML =
+            `.opt b{color:${primaryColor.value};}`;
+    })
 })
 
 //Removing unsupported attributes in liquid templates
@@ -37,40 +96,6 @@ const attributeRemover = function (selector, attribute) {
         el.removeAttribute(attribute);
     })
 }
-
-
-//set templates
-btnUrl.addEventListener('click', function () {
-    if (logoUrl.value) {
-        imgSrc.forEach(img => img.src = logoUrl.value);
-        messagePlaceholder.forEach(msg => msg.innerText = tempTextarea.value);
-
-        opts.forEach(opt => {
-            opt.firstElementChild.innerHTML = "";
-            opt.firstElementChild.innerHTML =
-                `.opt b{color:${primaryColor.value};} img.logo-placeholder {width: ${rangeWidth.value}px;}`;
-        })
-
-        Swal.fire({
-            icon: "success",
-            title: "¡Plantillas listas!",
-            position: "center",
-            timer: 3000,
-            showConfirmButton: true
-        });
-
-    } else {
-        Swal.fire({
-            icon: "warning",
-            title: "Ingresa la URL de tu logo",
-            position: "center",
-            timer: 3000,
-            showConfirmButton: true
-        });
-    }
-})
-
-//Color input
 
 //Order printer template copy function
 
@@ -86,7 +111,7 @@ const copyToClip = function (str) {
         e.clipboardData.setData("text/plain", str);
         e.preventDefault();
     }
-    
+
     document.addEventListener("copy", listener);
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
@@ -106,5 +131,3 @@ opsCopyBtn.forEach((btn, i) => {
         copyToClip(liquidTemplates[i].innerHTML)
     })
 })
-
-

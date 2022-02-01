@@ -11,13 +11,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-  }
-  
-  /*
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
    *
@@ -26,467 +26,573 @@
    *
    * Customize the background color to match your design.
    */
-  
-  ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  /*
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
    * A better looking default horizontal rule
    */
-  
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-  }
-  
-  /*
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
    * Remove the gap between audio, canvas, iframes,
    * images, videos and the bottom of their containers:
    * https://github.com/h5bp/html5-boilerplate/issues/440
    */
-  
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-    vertical-align: middle;
-  }
-  
-  /*
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
    * Remove default fieldset styles.
    */
-  
-  fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
    * Allow only vertical resizing of textareas.
    */
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* ==========================================================================
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
      Author's custom styles
      ========================================================================== */
-  
-  html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    background: rgb(246, 246, 247);
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-transform: uppercase;
-  }
-  
-  header {
-    padding: 15px;
-    background: #3b4f66;
-  }
-  
-  
-  header .kmillion__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  hr {
-    margin-bottom: 1em;
-    border: thin solid rgb(219, 219, 219);
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: rgb(246, 246, 247);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+header {
+  padding: 15px;
+  background: #3b4f66;
+}
+
+
+header .kmillion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+hr {
+  margin-bottom: 1em;
+  border: thin solid rgb(219, 219, 219);
+}
+
+button {
+  cursor: pointer;
+}
+
+.kmillion__logo-wrapper {
+  width: 150px;
+}
+
+.kmillion__logo-wrapper img.kmillion__logo {
+  width: 100%;
+}
+
+@media only screen and (min-width: 769px) {
   .kmillion__logo-wrapper {
-    width: 150px;
+    width: 300px;
   }
-  
-  .kmillion__logo-wrapper img.kmillion__logo {
-    width: 100%;
-  }
-  
-  @media only screen and (min-width: 769px) {
-    .kmillion__logo-wrapper {
-      width: 300px;
-    }
-  }
-  
-  /* _Order_printer_header */
-  
+}
+
+/* _Order_printer_header */
+
+.oph {
+  max-width: 1200px;
+  padding: 10px;
+  margin: 2em auto;
+}
+
+.oph__title {
+  margin-bottom: 2em;
+}
+
+.oph__title h1 {
+  text-align: center;
+}
+
+.oph__title p {
+  text-align: left;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 800px) {
   .oph {
-    max-width: 1200px;
-    padding: 10px;
-    margin: 2em auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
   }
-  
+
   .oph__title {
-    margin-bottom: 2em;
+    text-align: left;
+    width: 40%;
+    margin-right: 3em;
   }
-  
+
   .oph__title h1 {
-    text-align: center;
-  }
-  
-  .oph__title p {
     text-align: left;
   }
-  
-  .video-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
+
+  .oph__tutorial {
+    width: 60%;
   }
-  
-  .responsive-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  @media only screen and (min-width: 800px) {
-    .oph {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-    }
-  
-    .oph__title {
-      text-align: left;
-      width: 40%;
-      margin-right: 3em;
-    }
-  
-    .oph__title h1 {
-      text-align: left;
-    }
-  
-    .oph__tutorial {
-      width: 60%;
-    }
-  }
-  
-  /* _Order_printer_section */
-  
+}
+
+/* _Order_printer_section */
+
+.ops {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 2em;
+}
+
+
+.ops__form {
+  background: rgb(255 255 255);
+  color: rgb(92 95 98);
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(174, 180, 185, 0.5);
+}
+
+/* Tab component */
+.ops__form .tab-buttons ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  list-style: none;
+  padding-inline: unset;
+}
+
+.ops__form .tab-buttons ul li {
+  flex: 1;
+  padding: 10px;
+  border-radius: 0;
+  border: thin solid rgba(174, 180, 185, 0.5);
+  text-align: center;
+  cursor: pointer;
+}
+
+.ops__form .tab-buttons ul li.active {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.ops__form .tab-panel {
+  display: none;
+}
+
+.ops__form .tab-panel.active {
+  display: block;
+}
+
+.ops__form h3 {
+  margin: 5px 0 20px 0;
+  color: #202223;
+}
+
+.ops__form p {
+  color: rgb(92 95 98);
+}
+
+.ops__form label {
+  padding-bottom: 0.5em;
+  display: block;
+}
+
+.ops__form-item {
+  margin-bottom: 1em;
+  font-size: 18px;
+}
+
+.ops__form-item .headings-color {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ops__form-item .headings-color #primaryColorInput {
+  margin-left: 1em;
+}
+
+.ops__form-item .logo-width {
+  display: flex;
+  align-items: center;
+}
+
+.ops__form input {
+  border-radius: 5px;
+  border: thin solid silver;
+  width: 100%;
+  padding: 1em;
+}
+
+.ops__form textarea {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 1em;
+  font-family: inherit;
+  border-radius: 5px;
+  border: thin solid silver;
+}
+
+.ops__form-item .logo-width #logoWidth {
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.ops__form input[type=color] {
+  height: 50px;
+  width: 50px;
+  padding: 1px 2px;
+}
+
+.ops__form input[type=checkbox] {
+  width: auto;
+  display: none;
+}
+
+.content .ops__form-item {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.content .ops__form-item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border: thin solid rgba(174, 180, 185, 0.5);
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.content .ops__form-item:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.content .ops__form-item input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.content .ops__form-item input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.content .ops__form-item .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-sizing: unset;
+}
+
+.kmillion__contact-us,
+button#btnUrl {
+  background: cornflowerblue;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 0.3s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+button#btnUrl span:first-of-type {
+  margin-right: 5px;
+}
+
+.kmillion__contact-us:hover,
+button#btnUrl:hover {
+  text-decoration: none;
+  background: rgb(85, 125, 199);
+}
+
+button#btnUrl:active {
+  transform: scale(0.98);
+}
+
+.kmillion__contact-us {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ops__copy-btn {
+  font-size: 16px;
+  background-color: cornflowerblue;
+  color: white;
+  transition: 0.3s;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: thin solid transparent;
+}
+
+.ops__copy-btn:hover {
+  background-color: rgb(85, 125, 199);
+}
+
+.ops__print-btn,
+.ops__form-btn button[type=reset] {
+  display: inline;
+  background: none;
+  border: none;
+  color: cornflowerblue;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.ops__print-btn:hover,
+.ops__form-btn button[type=reset]:hover {
+  opacity: 0.6;
+}
+
+.ops__template-container {
+  background-color: rgb(255 255 255);
+  border-radius: 10px;
+  padding: 1em;
+  margin-bottom: 2em;
+  box-shadow: 0 0 3px rgba(174, 180, 185, 0.5);
+}
+
+.ops__template-container h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.ops__template-content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: thin solid rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.ops__form-btn,
+.ops__template-btn {
+  margin-top: 1em;
+}
+
+.ops__template-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ops__print-btn,
+.ops__copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ops__print-btn span:first-of-type,
+.ops__copy-btn span:first-of-type {
+  margin-right: 5px;
+}
+
+
+.ops__form-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 800px) {
   .ops {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-    margin-top: 2em;
-  }
-  
-  
-  .ops__form {
-    background: rgb(255 255 255);
-    color: rgb(92 95 98);
-    padding: 1em;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 3px rgba(174, 180, 185, 0.5);
-  }
-  
-  .ops__form h3 {
-    margin: 5px 0 20px 0;
-    color: #202223;
-  }
-  
-  .ops__form p {
-    color: rgb(92 95 98);
-  }
-  
-  .ops__form label {
-    padding-bottom: 0.5em;
-    display: block;
-  }
-  
-  .ops__form-item {
-    margin-bottom: 1em;
-  }
-  
-  .ops__form-item .headings-color {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .ops__form-item .headings-color #primaryColorInput {
-    margin-left: 1em;
-  }
-  
-  .ops__form-item .logo-width {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ops__form input {
-    border-radius: 5px;
-    border: thin solid silver;
-    width: 100%;
-    padding: 1em;
-  }
-  
-  .ops__form textarea {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    padding: 1em;
-    font-family: inherit;
-    border-radius: 5px;
-    border: thin solid silver;
-  }
-  
-  .ops__form-item .logo-width #logoWidth {
-    font-weight: bold;
-    margin-left: 1em;
-  }
-  
-  .ops__form input[type=color] {
-    height: 50px;
-    width: 50px;
-    padding: 1px 2px;
-  }
-  
-  .kmillion__contact-us,
-  button#btnUrl {
-    background: cornflowerblue;
-    padding: 10px 20px;
-    text-align: center;
-    text-transform: capitalize;
-    transition: 0.3s;
-    background-size: 200% auto;
-    color: white;
-    border-radius: 5px;
-    display: block;
-    border: none;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-  }
-  
-  button#btnUrl span:first-of-type {
-    margin-right: 5px;
-  }
-  
-  .kmillion__contact-us:hover,
-  button#btnUrl:hover {
-    text-decoration: none;
-    background: rgb(85, 125, 199);
-  }
-  
-  button#btnUrl:active {
-    transform: scale(0.98);
-  }
-  
-  .kmillion__contact-us {
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .ops__copy-btn {
-    font-size: 16px;
-    background-color: cornflowerblue;
-    color: white;
-    transition: 0.3s;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: thin solid transparent;
-  }
-  
-  .ops__copy-btn:hover {
-    background-color: rgb(85, 125, 199);
-  }
-  
-  .ops__print-btn,
-  .ops__form-btn button[type=reset] {
-    display: inline;
-    background: none;
-    border: none;
-    color: cornflowerblue;
-    transition: 0.3s;
-    margin-right: 20px;
-  }
-  
-  .ops__print-btn:hover,
-  .ops__form-btn button[type=reset]:hover {
-    opacity: 0.6;
-  }
-  
-  .ops__template-container {
-    background-color: rgb(255 255 255);
-    border-radius: 10px;
-    padding: 1em;
-    margin-bottom: 2em;
-    box-shadow: 0 0 3px rgba(174, 180, 185, 0.5);
-  }
-  
-  .ops__template-container h3 {
-    margin-top: 0;
-    margin-bottom: 1em;
-  }
-  
-  .ops__template-content {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: thin solid rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-  }
-  
-  .ops__form-btn,
-  .ops__template-btn {
-    margin-top: 1em;
-  }
-  
-  .ops__template-btn {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .ops__print-btn,
-  .ops__copy-btn {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
+    position: relative;
   }
-  
-  .ops__print-btn span:first-of-type,
-  .ops__copy-btn span:first-of-type {
-    margin-right: 5px;
+
+  .ops__templates {
+    margin-left: 2em;
+    width: 60%;
   }
-  
-  
-  .ops__form-btn {
-    display: flex;
-    justify-content: space-between;
+
+  .ops__form {
+    width: 40%;
+    position: sticky;
+    top: 20px;
+    display: inline-block;
   }
-  
-  @media only screen and (min-width: 800px) {
-    .ops {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      position: relative;
-    }
-  
-    .ops__templates {
-      margin-left: 2em;
-      width: 60%;
-    }
-  
-    .ops__form {
-      width: 40%;
-      position: sticky;
-      top: 20px;
-      display: inline-block;
-    }
+}
+
+@media only screen and (min-width: 1260px) {
+  .ops__templates {
+    width: 70%;
   }
-  
-  @media only screen and (min-width: 1260px) {
-    .ops__templates {
-      width: 70%;
-    }
-  
-    .ops__form {
-      width: 30%;
-    }
+
+  .ops__form {
+    width: 30%;
   }
-  
-  .help-us {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .opt {
-    padding: 10px;
-    min-width: 600px;
-    font-family: sans-serif;
-  }
-  
-  .opt h3 {
-    font-family: sans-serif;
-  }
-  
-  .opt__liquid {
-    display: none;
-  }
-  
-  footer {
-   box-shadow: 0 0 2px rgba(174, 180, 185, 0.9);
-  }
-  
-  footer p {
-    color: rgb(92 95 98);
-    text-align: center;
-    padding: 50px;
-    margin: 0;
-    line-height: 1.2;
-  }
-  
-  .help-us a,
-  footer p a {
-    text-decoration: none;
-    color: cornflowerblue;
-  }
-  
-  /* ==========================================================================
+}
+
+.help-us {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.opt {
+  padding: 10px;
+  min-width: 600px;
+  font-family: sans-serif;
+}
+
+.opt h3 {
+  font-family: sans-serif;
+}
+
+.opt__liquid {
+  display: none;
+}
+
+footer {
+  box-shadow: 0 0 2px rgba(174, 180, 185, 0.9);
+}
+
+footer p {
+  color: rgb(92 95 98);
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.help-us a,
+footer p a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+/* ==========================================================================
      Helper classes
      ========================================================================== */
-  
-  /*
+
+/*
    * Hide visually and from screen readers
    */
-  
-  .hidden,
-  [hidden] {
-    display: none !important;
-  }
-  
-  /*
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
    * Hide only visually, but have it available for screen readers:
    * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
    *
@@ -494,46 +600,46 @@
    *    causes content to wrap 1 word per line:
    *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
    */
-  
-  .sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-  }
-  
-  /*
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
    * Extends the .sr-only class to allow the element
    * to be focusable when navigated to via the keyboard:
    * https://www.drupal.org/node/897638
    */
-  
-  .sr-only.focusable:active,
-  .sr-only.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-  
-  /*
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
    * Hide visually and from screen readers, but maintain layout
    */
-  
-  .invisible {
-    visibility: hidden;
-  }
-  
-  /*
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
    * Clearfix: contain floats
    *
    * For modern browsers
@@ -544,106 +650,106 @@
    * 2. The use of `table` rather than `block` is only necessary if using
    *    `:before` to contain the top-margins of child elements.
    */
-  
-  .clearfix::before,
-  .clearfix::after {
-    content: " ";
-    display: table;
-  }
-  
-  .clearfix::after {
-    clear: both;
-  }
-  
-  /* ==========================================================================
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
      EXAMPLE Media Queries for Responsive Design.
      These examples override the primary ('mobile first') styles.
      Modify as content requires.
      ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-  }
-  
-  @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-  }
-  
-  /* ==========================================================================
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
      Print styles.
      Inlined to avoid the additional HTTP request:
      https://www.phpied.com/delay-loading-your-print-css/
      ========================================================================== */
-  
-  @media print {
-  
-    *,
-    *::before,
-    *::after {
-      background: #fff !important;
-      color: #000 !important;
-      /* Black prints faster */
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-  
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-  
-    a[href]::after {
-      content: " ("attr(href) ")";
-    }
-  
-    abbr[title]::after {
-      content: " ("attr(title) ")";
-    }
-  
-    /*
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " ("attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " ("attr(title) ")";
+  }
+
+  /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]::after,
-    a[href^="javascript:"]::after {
-      content: "";
-    }
-  
-    pre {
-      white-space: pre-wrap !important;
-    }
-  
-    pre,
-    blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
-    }
-  
-    /*
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
      * Printing Tables:
      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-    thead {
-      display: table-header-group;
-    }
-  
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-  
-    p,
-    h2,
-    h3 {
-      orphans: 3;
-      widows: 3;
-    }
-  
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
+  thead {
+    display: table-header-group;
   }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
