@@ -298,7 +298,7 @@ button {
   padding: 1em;
 }
 
-.ops__form textarea {
+.ops__form  textarea {
   width: 100%;
   min-width: 100%;
   max-width: 100%;

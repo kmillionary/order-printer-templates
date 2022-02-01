@@ -224,20 +224,20 @@ p {
 }
 
 /* Shipping */
- .opt#shipping .opt__header {
+ #shipping .opt__header {
      flex-direction: row-reverse;
  }
 
- .opt#shipping .opt__header .opt__logo {
+#shipping .opt__header .opt__logo {
      text-align: left;
      margin-left: 0;
  }
 
- .opt#shipping h3 {
+#shipping h3 {
     text-align: right;
  }
 
- .opt#shipping {
+#shipping {
      max-width: 500px;
      border: 2px solid rgb(133, 133, 133);
      padding: 20px;

@@ -749,7 +749,7 @@
         </div>
         <!-- end shipping label template -->
         <!-- liquid shipping label template -->
-        <div class="opt__liquid">
+        <div class="opt__liquid" id="shipping">
           <link rel="stylesheet" href="https://kmillionary.github.io/order-printer-templates/css/templates.css">
           <style></style>
             <div class="opt__header">
@@ -764,7 +764,7 @@
               </div>
             </div>
             <div>
-              <p class="order-data">
+              <p class="opt__order-data order-data">
                 <b>Nombre:</b> {{ shipping_address.name }}
                 <br><b>Dirección:</b>
                 {% if shipping_address.company %}
