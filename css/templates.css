@@ -224,21 +224,20 @@ p {
 }
 
 /* Shipping */
- #shipping .opt__header {
-     flex-direction: row-reverse;
- }
 
-#shipping .opt__header .opt__logo {
-     text-align: left;
-     margin-left: 0;
- }
+.shipping {
+    max-width: 500px;
+    border: 2px solid rgb(133, 133, 133);
+    padding: 20px;
+}
+.opt-shipping__header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
 
-#shipping h3 {
-    text-align: right;
- }
-
-#shipping {
-     max-width: 500px;
-     border: 2px solid rgb(133, 133, 133);
-     padding: 20px;
- }
+.opt-shipping__logo img {
+    max-width: 300px;
+    width: 200px;
+    height: auto;
+}

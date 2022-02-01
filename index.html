@@ -725,11 +725,11 @@
           <!-- shipping label template -->
           <div class="opt" id="shipping">
             <style></style>
-            <div class="opt__header">
-              <div class="opt__order-data">
+            <div class="opt-shipping__header">
+              <div class="opt-shipping__order-data">
                 <h3>ORDEN 1001</h3>
               </div>
-              <div class="opt__logo">
+              <div class="opt-shipping__logo">
                 <div class="logo">
                   <img class="logo-placeholder"
                     src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
@@ -737,7 +737,7 @@
               </div>
             </div>
             <div>
-              <p class="opt__order-data order-data">
+              <p class="opt-shipping__order-data order-data">
                 <b>Nombre:</b> Nombre del Cliente
                 <br><b>Dirección:</b>
                 <br>Empresa Acme
@@ -752,41 +752,43 @@
         <div class="opt__liquid" id="shipping">
           <link rel="stylesheet" href="https://kmillionary.github.io/order-printer-templates/css/templates.css">
           <style></style>
-            <div class="opt__header">
-              <div class="opt__order-data">
-                <h3>ORDEN {{ order_number }}</h3>
-              </div>
-              <div class="opt__logo">
-                <div class="logo">
-                  <img class="logo-placeholder"
-                    src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+            <div class="shipping">
+              <div class="opt-shipping__header">
+                <div class="opt-shipping__order-data">
+                  <h3>ORDEN {{ order_number }}</h3>
+                </div>
+                <div class="opt-shipping__logo">
+                  <div class="logo">
+                    <img class="logo-placeholder"
+                      src="https://cdn.shopify.com/s/files/1/0482/5815/4657/files/placeholder.png?v=1632376157" alt="logo">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <p class="opt__order-data order-data">
-                <b>Nombre:</b> {{ shipping_address.name }}
-                <br><b>Dirección:</b>
-                {% if shipping_address.company %}
-                <br>{{ shipping_address.company }}
-                {% endif %}
-                {% if shipping_address.address1 %}
-                <br>{{ shipping_address.address1 }}
-                {% endif %}
-                {% if shipping_address.address2 %}
-                <br>{{ shipping_address.address2 }}
-                {% endif %}
-                {% if shipping_address.city %}
-                <br> {{ shipping_address.city }},
-                {% endif %}
-                {% if shipping_address.province %}
-                {{ shipping_address.province }},
-                {% endif %}
-                {% if shipping_address.country %}
-                {{ shipping_address.country }}
-                {% endif %}
-                <br><b>Teléfono:</b> {{ shipping_address.phone }}
-              </p>
+              <div>
+                <p class="opt-shipping__order-data order-data">
+                  <b>Nombre:</b> {{ shipping_address.name }}
+                  <br><b>Dirección:</b>
+                  {% if shipping_address.company %}
+                  <br>{{ shipping_address.company }}
+                  {% endif %}
+                  {% if shipping_address.address1 %}
+                  <br>{{ shipping_address.address1 }}
+                  {% endif %}
+                  {% if shipping_address.address2 %}
+                  <br>{{ shipping_address.address2 }}
+                  {% endif %}
+                  {% if shipping_address.city %}
+                  <br> {{ shipping_address.city }},
+                  {% endif %}
+                  {% if shipping_address.province %}
+                  {{ shipping_address.province }},
+                  {% endif %}
+                  {% if shipping_address.country %}
+                  {{ shipping_address.country }}
+                  {% endif %}
+                  <br><b>Teléfono:</b> {{ shipping_address.phone }}
+                </p>
+              </div>
             </div>
         </div>
         <!-- end liquid shipping label template -->
